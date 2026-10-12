@@ -1,0 +1,1053 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<title>可持續薄肌手冊</title>
+<style>
+:root{
+  --ink:#1d1d1b; --ink2:#52514e; --muted:#8a8984; --line:#dcdad3; --soft:#f4f3ef;
+  --blue:#2a78d6; --blue-t:#e3eefb; --blue-m:#8fbbee;
+  --aqua:#1baf7a; --aqua-t:#e0f4ec;
+  --orange:#eb6834; --orange-t:#fdebe3;
+  --yellow:#eda100; --yellow-t:#fdf2d9;
+  --red:#e34948; --red-t:#fbe5e4;
+  --green:#008300; --green-t:#e0f0e0;
+}
+@page{ size:A4; margin:18mm 17mm 19mm;
+  @bottom-center{ content:counter(page); font:8.5pt "Microsoft JhengHei",sans-serif; color:#8a8984; }
+  @bottom-right{ content:"可持續薄肌手冊"; font:8pt "Microsoft JhengHei",sans-serif; color:#b5b3ab; }
+}
+@page cover{ margin:0; @bottom-center{content:none} @bottom-right{content:none} }
+*{ box-sizing:border-box; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{ margin:0; background:#fff; color:var(--ink);
+  font-family:"Microsoft JhengHei","Noto Sans TC",sans-serif; font-size:10.3pt; line-height:1.72; }
+.cover{ page:cover; height:297mm; width:210mm; position:relative; overflow:hidden; background:#f6f5f1; break-after:page; }
+.cover .band{ position:absolute; left:0; right:0; top:0; height:118mm; background:var(--blue); }
+.cover .inner{ position:absolute; left:22mm; right:22mm; top:44mm; color:#fff; }
+.cover .kicker{ font-size:11pt; letter-spacing:.2em; opacity:.85; }
+.cover h1{ font-size:40pt; line-height:1.2; margin:6mm 0 4mm; font-weight:700; letter-spacing:.04em; }
+.cover .sub{ font-size:14pt; opacity:.95; }
+.cover .art{ position:absolute; left:22mm; right:22mm; top:136mm; }
+.cover .foot{ position:absolute; left:22mm; right:22mm; bottom:20mm; color:var(--ink2); font-size:9.5pt; line-height:1.6; border-top:1px solid var(--line); padding-top:4mm; }
+
+.chapter{ break-before:page; }
+.chap-no{ color:var(--blue); font-size:10pt; font-weight:700; letter-spacing:.12em; }
+h1{ font-size:21pt; line-height:1.3; margin:1mm 0 2mm; }
+.lead{ font-size:11.2pt; color:var(--ink2); margin:0 0 6mm; padding-bottom:4mm; border-bottom:2px solid var(--ink); }
+h2{ font-size:13.2pt; margin:7mm 0 2.5mm; padding-left:3mm; border-left:4px solid var(--blue); line-height:1.35; break-after:avoid; }
+h3{ font-size:11pt; margin:4mm 0 1.5mm; break-after:avoid; }
+p{ margin:0 0 2.6mm; }
+ul,ol{ margin:0 0 3mm; padding-left:5.5mm; }
+li{ margin:0 0 1.1mm; }
+li::marker{ color:var(--blue); }
+b,strong{ font-weight:700; }
+.muted{ color:var(--muted); }
+.small{ font-size:9pt; color:var(--ink2); }
+
+table{ width:100%; border-collapse:collapse; margin:2mm 0 4mm; font-size:9.6pt; line-height:1.55; break-inside:avoid; }
+th{ text-align:left; font-weight:700; background:var(--soft); border-bottom:1.5px solid var(--ink); padding:1.8mm 2.2mm; }
+td{ border-bottom:1px solid var(--line); padding:1.8mm 2.2mm; vertical-align:top; }
+td.n,th.n{ text-align:right; white-space:nowrap; }
+.nowrap{ white-space:nowrap; }
+
+figure{ margin:4mm 0 5mm; break-inside:avoid; }
+figure svg{ display:block; width:100%; height:auto; }
+figcaption{ font-size:8.8pt; color:var(--ink2); margin-top:1.5mm; }
+figcaption b{ color:var(--ink); }
+
+.box{ border-radius:3mm; padding:3.2mm 4mm; margin:3mm 0 4mm; break-inside:avoid; }
+.box p:last-child,.box ul:last-child{ margin-bottom:0; }
+.box .t{ font-weight:700; margin-bottom:1mm; }
+.tip{ background:var(--blue-t); }
+.warn{ background:var(--orange-t); }
+.note{ background:var(--soft); }
+
+.grid2{ display:grid; grid-template-columns:1fr 1fr; gap:4mm; }
+.grid3{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:3.5mm; }
+.card{ border:1px solid var(--line); border-radius:3mm; padding:3mm 3.5mm; break-inside:avoid; background:#fff; }
+.card .h{ font-weight:700; font-size:10.6pt; margin-bottom:1mm; }
+.card ul{ padding-left:4.5mm; margin:0; font-size:9.4pt; }
+.card p{ font-size:9.4pt; }
+
+.light{ display:grid; grid-template-columns:repeat(3,1fr); gap:3mm; margin:3mm 0 4mm; break-inside:avoid; }
+.light > div{ border-radius:3mm; padding:3mm 3.5mm; font-size:9.4pt; line-height:1.55; }
+.light .h{ font-weight:700; font-size:10.4pt; margin-bottom:1mm; display:flex; align-items:center; gap:2mm; }
+.dot{ width:3.4mm; height:3.4mm; border-radius:50%; display:inline-block; flex:none; }
+
+.plan{ break-inside:avoid; margin:2mm 0 4mm; }
+.plan table{ margin:0; }
+.plan .ph{ display:flex; justify-content:space-between; align-items:baseline; background:var(--blue); color:#fff; padding:1.6mm 3mm; border-radius:2mm 2mm 0 0; font-weight:700; font-size:10pt; }
+.plan .ph span{ font-weight:400; font-size:8.8pt; opacity:.9; }
+.plan td:first-child{ width:62%; }
+
+.quick{ display:grid; grid-template-columns:1fr 1fr; gap:3.5mm; }
+.quick .card .h{ color:var(--blue); }
+.quick .card{ font-size:9.2pt; line-height:1.55; }
+.quick .card ul{ font-size:9.2pt; }
+.end{ margin-top:6mm; font-size:8.6pt; color:var(--muted); text-align:center; }
+</style>
+</head>
+<body>
+
+<!-- ============ 封面 ============ -->
+<section class="cover">
+  <div class="band"></div>
+  <div class="inner">
+    <div class="kicker">訓練與生活指南</div>
+    <h1>可持續薄肌手冊</h1>
+    <div class="sub">好看、好用、練得久的身體</div>
+  </div>
+  <div class="art">
+    <svg viewBox="0 0 660 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="三根主柱示意">
+      <rect x="40" y="30" width="580" height="46" rx="6" fill="#1d1d1b"/>
+      <text x="330" y="60" text-anchor="middle" font-size="19" fill="#fff" font-weight="700">好看 · 好用 · 練得久</text>
+      <g font-size="17" font-weight="700" text-anchor="middle">
+        <rect x="80" y="86" width="120" height="150" rx="6" fill="#2a78d6"/>
+        <text x="140" y="168" fill="#fff">肌力</text>
+        <rect x="270" y="86" width="120" height="150" rx="6" fill="#1baf7a"/>
+        <text x="330" y="168" fill="#fff">心肺</text>
+        <rect x="460" y="86" width="120" height="150" rx="6" fill="#6b6a65"/>
+        <text x="520" y="168" fill="#fff">恢復</text>
+      </g>
+      <rect x="40" y="246" width="580" height="40" rx="6" fill="#e3e1da"/>
+      <text x="330" y="272" text-anchor="middle" font-size="14" fill="#52514e">爆發力 · 平衡 · 活動度</text>
+    </svg>
+  </div>
+  <div class="foot">
+    AZ · 2026 年 10 月版<br>
+    本手冊是給一般成年人的健身指南，不取代醫療建議。有疾病、舊傷、懷孕或正在服藥，開始前先問醫生。
+  </div>
+</section>
+
+<!-- ============ 開始之前 ============ -->
+<section class="chapter">
+  <div class="chap-no">開始之前</div>
+  <h1>怎麼用這本手冊</h1>
+  <p class="lead">先看懂目標，再挑一套課表照著練。所有數字都是起點，不是規定；照自己的狀況調整。</p>
+
+  <table>
+    <tr><th style="width:28%">你想知道</th><th>看哪裡</th></tr>
+    <tr><td>薄肌是什麼、體脂要多少</td><td>第 1 章</td></tr>
+    <tr><td>一週要練哪些東西</td><td>第 2 章、第 7 章</td></tr>
+    <tr><td>重量訓練怎麼練、選哪套課表</td><td>第 3 章、第 4 章</td></tr>
+    <tr><td>有氧要做多少</td><td>第 5 章</td></tr>
+    <tr><td>怎麼吃</td><td>第 8 章</td></tr>
+    <tr><td>沒進步、很累怎麼辦</td><td>第 9 章、第 10 章</td></tr>
+    <tr><td>只想看重點</td><td>最後一頁「速查卡」</td></tr>
+  </table>
+
+  <h2>開始前先確認</h2>
+  <ul>
+    <li>有心臟病、高血壓、糖尿病、關節舊傷、懷孕，或正在長期服藥：<b>先問醫生</b>，尤其是高強度間歇和跳躍。</li>
+    <li>不確定的話，可以先做 PAR-Q+ 運動前自評問卷（網路可免費取得）。</li>
+    <li>很久沒運動：前 2–4 週全部用輕重量、短時間，讓身體先適應。</li>
+  </ul>
+
+  <h2>疼痛紅綠燈</h2>
+  <p>練習時分清楚「累」和「痛」。肌肉痠是正常的，關節痛不是。</p>
+  <div class="light">
+    <div style="background:var(--green-t)">
+      <div class="h"><span class="dot" style="background:var(--green)"></span>綠燈：照常練</div>
+      肌肉痠、累、喘；練完隔 1–2 天的肌肉痠痛。
+    </div>
+    <div style="background:var(--yellow-t)">
+      <div class="h"><span class="dot" style="background:var(--yellow)"></span>黃燈：調整</div>
+      關節有點不舒服（10 分裡 3 分以下），隔天就消退。<b>減重量、縮小幅度，或換一個不痛的動作。</b>
+    </div>
+    <div style="background:var(--red-t)">
+      <div class="h"><span class="dot" style="background:var(--red)"></span>紅燈：停</div>
+      尖銳的痛、越練越痛、隔天更痛、麻或腫。<b>停練這個部位，找醫生或物理治療師。</b>
+    </div>
+  </div>
+
+  <div class="box note">
+    <div class="t">這本手冊的原則</div>
+    <ul>
+      <li>能長期做下去，比短期做到最好重要。</li>
+      <li>看趨勢，不看單一天的數字。</li>
+      <li>忙的時候做少一點也算數，不要因為做不滿就整週放棄。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 第 1 章 ============ -->
+<section class="chapter">
+  <div class="chap-no">第 1 章</div>
+  <h1>目標：薄肌是什麼</h1>
+  <p class="lead">薄肌 ＝ 足夠的肌肉 ＋ 適中的體脂。我們要的是一副好看、好用、能長期維持的身體，不是某個數字。</p>
+
+  <h2>方法只有兩個</h2>
+  <ul>
+    <li><b>重量訓練</b>讓肌肉長出來。</li>
+    <li><b>控制熱量</b>讓脂肪降下來。</li>
+  </ul>
+  <p>沒有專門練「薄肌」的特殊方法。肌力、心肺和平衡則讓這身肌肉反應快、穩、不容易受傷。</p>
+
+  <h2>體脂參考</h2>
+  <figure>
+    <svg viewBox="0 0 680 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="男女體脂外型參考區間">
+      <g font-size="13" fill="#1d1d1b">
+        <!-- scale: x = 60 + (pct-5)*20 -->
+        <text x="0" y="57" font-weight="700">男性</text>
+        <text x="0" y="137" font-weight="700">女性</text>
+      </g>
+      <defs>
+        <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <rect width="6" height="6" fill="#f1f0ec"/><line x1="0" y1="0" x2="0" y2="6" stroke="#c9c7bf" stroke-width="2"/>
+        </pattern>
+      </defs>
+      <!-- 男 -->
+      <g>
+        <rect x="60"  y="34" width="58"  height="36" rx="3" fill="url(#hatch)"/>
+        <rect x="120" y="34" width="38"  height="36" rx="3" fill="#c7ebdc"/>
+        <rect x="160" y="34" width="98"  height="36" rx="3" fill="#1baf7a"/>
+        <rect x="260" y="34" width="98"  height="36" rx="3" fill="#c7ebdc"/>
+        <rect x="360" y="34" width="300" height="36" rx="3" fill="#e3e1da"/>
+      </g>
+      <g font-size="12" text-anchor="middle" fill="#1d1d1b">
+        <text x="89" y="57" fill="#52514e">不建議</text>
+        <text x="139" y="57">短期</text>
+        <text x="209" y="57" fill="#fff" font-weight="700">常態目標</text>
+        <text x="309" y="57">增肌期可接受</text>
+        <text x="510" y="57">以外型來說，先減脂</text>
+      </g>
+      <!-- 女 -->
+      <g>
+        <rect x="60"  y="114" width="218" height="36" rx="3" fill="url(#hatch)"/>
+        <rect x="280" y="114" width="78"  height="36" rx="3" fill="#c7ebdc"/>
+        <rect x="360" y="114" width="98"  height="36" rx="3" fill="#1baf7a"/>
+        <rect x="460" y="114" width="98"  height="36" rx="3" fill="#c7ebdc"/>
+        <rect x="560" y="114" width="100" height="36" rx="3" fill="#e3e1da"/>
+      </g>
+      <g font-size="12" text-anchor="middle" fill="#1d1d1b">
+        <text x="169" y="137" fill="#52514e">不建議長期維持</text>
+        <text x="319" y="137">短期</text>
+        <text x="409" y="137" fill="#fff" font-weight="700">常態目標</text>
+        <text x="509" y="137">增肌期可接受</text>
+        <text x="610" y="137">先減脂</text>
+      </g>
+      <!-- axis -->
+      <g font-size="11" fill="#8a8984" text-anchor="middle">
+        <line x1="60" y1="170" x2="660" y2="170" stroke="#dcdad3"/>
+        <text x="60" y="188">5%</text><text x="120" y="188">8%</text><text x="160" y="188">10%</text>
+        <text x="260" y="188">15%</text><text x="360" y="188">20%</text><text x="460" y="188">25%</text>
+        <text x="560" y="188">30%</text><text x="660" y="188">35%</text>
+      </g>
+      <g stroke="#dcdad3">
+        <line x1="60" y1="166" x2="60" y2="174"/><line x1="120" y1="166" x2="120" y2="174"/><line x1="160" y1="166" x2="160" y2="174"/>
+        <line x1="260" y1="166" x2="260" y2="174"/><line x1="360" y1="166" x2="360" y2="174"/><line x1="460" y1="166" x2="460" y2="174"/>
+        <line x1="560" y1="166" x2="560" y2="174"/><line x1="660" y1="166" x2="660" y2="174"/>
+      </g>
+      <text x="360" y="206" font-size="11" fill="#8a8984" text-anchor="middle">體脂率</text>
+    </svg>
+    <figcaption><b>圖 1　體脂的外型參考。</b>這是外型目標，不是健康分界線；每個人能舒服維持的範圍不一樣。</figcaption>
+  </figure>
+
+  <ul>
+    <li><b>常態：</b>男性約 10–15%，女性約 20–25%。這個範圍多數人吃得飽、練得動、睡得好。</li>
+    <li><b>短期壓低：</b>拍照或活動前可以短期降一點，結束後回到常態。這不是必要步驟。</li>
+    <li><b>體脂機不準：</b>體脂秤、體脂機的誤差常有好幾個百分點。看<b>腰圍、照片和長期趨勢</b>更可靠。</li>
+  </ul>
+
+  <div class="box tip">
+    <div class="t">一個更簡單的健康指標</div>
+    <p><b>腰圍小於身高的一半。</b>例如身高 170 公分，腰圍最好在 85 公分以下。量法：肚臍高度、自然吐氣後量。</p>
+  </div>
+
+  <div class="box warn">
+    <div class="t">比體脂數字更重要的訊號</div>
+    <p>出現以下情況，通常代表吃得太少或練得太多，男女都適用：</p>
+    <ul>
+      <li>月經變亂或停經、性慾明顯下降</li>
+      <li>一直很累、常生病、反覆受傷</li>
+      <li>訓練表現持續退步</li>
+    </ul>
+    <p>這時先多吃一點、少練一點；持續的話去看醫生。</p>
+  </div>
+</section>
+
+<!-- ============ 第 2 章 ============ -->
+<section class="chapter">
+  <div class="chap-no">第 2 章</div>
+  <h1>六件事都要練，但比重不同</h1>
+  <p class="lead">肌力、心肺、恢復是三根主柱，給足時間。爆發力、平衡、活動度用最少的量，塞進熱身和課表空檔。</p>
+
+  <figure>
+    <svg viewBox="0 0 680 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="六大要素示意">
+      <rect x="20" y="10" width="640" height="44" rx="6" fill="#1d1d1b"/>
+      <text x="340" y="39" text-anchor="middle" font-size="16" fill="#fff" font-weight="700">可持續薄肌：好看、好用、練得久</text>
+      <g text-anchor="middle">
+        <rect x="50" y="66" width="160" height="150" rx="6" fill="#2a78d6"/>
+        <text x="130" y="112" font-size="19" fill="#fff" font-weight="700">肌力</text>
+        <text x="130" y="142" font-size="12.5" fill="#fff">重量訓練</text>
+        <text x="130" y="164" font-size="12.5" fill="#fff">每週 3 次</text>
+        <rect x="260" y="66" width="160" height="150" rx="6" fill="#1baf7a"/>
+        <text x="340" y="112" font-size="19" fill="#fff" font-weight="700">心肺</text>
+        <text x="340" y="142" font-size="12.5" fill="#fff">有氧</text>
+        <text x="340" y="164" font-size="12.5" fill="#fff">每週約 150 分鐘</text>
+        <rect x="470" y="66" width="160" height="150" rx="6" fill="#6b6a65"/>
+        <text x="550" y="112" font-size="19" fill="#fff" font-weight="700">恢復</text>
+        <text x="550" y="142" font-size="12.5" fill="#fff">睡眠與休息</text>
+        <text x="550" y="164" font-size="12.5" fill="#fff">每晚 7–9 小時</text>
+      </g>
+      <g text-anchor="middle">
+        <rect x="20"  y="228" width="206" height="62" rx="6" fill="#fdebe3"/>
+        <text x="123" y="254" font-size="14" fill="#1d1d1b" font-weight="700">爆發力</text>
+        <text x="123" y="276" font-size="11.5" fill="#52514e">每週 2 次 × 5–10 分鐘</text>
+        <rect x="237" y="228" width="206" height="62" rx="6" fill="#fdf2d9"/>
+        <text x="340" y="254" font-size="14" fill="#1d1d1b" font-weight="700">平衡與核心</text>
+        <text x="340" y="276" font-size="11.5" fill="#52514e">放進重量訓練</text>
+        <rect x="454" y="228" width="206" height="62" rx="6" fill="#e3eefb"/>
+        <text x="557" y="254" font-size="14" fill="#1d1d1b" font-weight="700">活動度</text>
+        <text x="557" y="276" font-size="11.5" fill="#52514e">每次熱身＋伸展 5–10 分鐘</text>
+      </g>
+    </svg>
+    <figcaption><b>圖 2　三根主柱和三項小劑量。</b>主柱撐起身體，小劑量讓它更穩、更靈活。</figcaption>
+  </figure>
+
+  <table>
+    <tr><th style="width:17%">要素</th><th style="width:33%">為什麼要練</th><th style="width:27%">怎麼練</th><th>每週最少</th></tr>
+    <tr><td><b>肌力</b></td><td>外型、代謝、老了還能自己走動</td><td>複合動作，慢慢加重</td><td>3 次</td></tr>
+    <tr><td><b>心肺</b></td><td>心血管健康、恢復快、活得久</td><td>中等強度為主，少量高強度</td><td>150 分鐘中等強度，或 75 分鐘高強度</td></tr>
+    <tr><td><b>恢復</b></td><td>讓其他五項真正有效</td><td>睡眠、減量週、管理壓力</td><td>每晚 7–9 小時</td></tr>
+    <tr><td><b>爆發力</b></td><td>反應快；40 歲後退化最快</td><td>跳、拋、短衝刺</td><td>2 次 × 5–10 分鐘</td></tr>
+    <tr><td><b>平衡與核心</b></td><td>單腳穩定，少扭傷、少跌倒、少腰痛</td><td>單腳動作、抗旋轉</td><td>放進重量訓練</td></tr>
+    <tr><td><b>活動度</b></td><td>動作做得標準、關節舒服</td><td>動態熱身、練後伸展</td><td>每次 5–10 分鐘</td></tr>
+  </table>
+  <p class="small">柔軟度夠用就好，能把動作做標準即可。多拉筋並不能明顯預防受傷，不必花大量時間。</p>
+</section>
+
+<!-- ============ 第 3 章 ============ -->
+<section class="chapter">
+  <div class="chap-no">第 3 章</div>
+  <h1>重量訓練：五個原則</h1>
+  <p class="lead">記住這五條，換哪套課表都通用。</p>
+
+  <table>
+    <tr><th style="width:6%">#</th><th style="width:40%">原則</th><th>說明</th></tr>
+    <tr><td>1</td><td><b>每個肌群每週練 2 次</b></td><td>比一週只練一次更有效，漏練一天也不會整週落空。</td></tr>
+    <tr><td>2</td><td><b>每個肌群每週約 10 組</b></td><td>新手 6–8 組就有效。熱身組不算。</td></tr>
+    <tr><td>3</td><td><b>每組做到「還能再做 1–3 下」</b></td><td>太輕不算數，每組都做到力竭又太累。見圖 3。</td></tr>
+    <tr><td>4</td><td><b>主項 6–10 下，配件 8–15 下</b></td><td>主項是深蹲、硬舉、臥推、划船這類大動作；配件是側平舉、彎舉這類小動作。</td></tr>
+    <tr><td>5</td><td><b>用「雙重漸進法」慢慢加</b></td><td>先加次數，再加重量。見圖 4。</td></tr>
+  </table>
+
+  <figure>
+    <svg viewBox="0 0 680 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="還能做幾下的判斷">
+      <text x="0" y="18" font-size="13" fill="#1d1d1b" font-weight="700">做完一組，問自己：「還能再做幾下？」</text>
+      <g text-anchor="middle">
+        <rect x="0"   y="34" width="104" height="56" rx="4" fill="#e3e1da"/>
+        <text x="52" y="60" font-size="20" font-weight="700" fill="#1d1d1b">0</text>
+        <text x="52" y="80" font-size="11" fill="#52514e">做不動了</text>
+        <rect x="110" y="34" width="104" height="56" rx="4" fill="#2a78d6"/>
+        <text x="162" y="60" font-size="20" font-weight="700" fill="#fff">1</text>
+        <rect x="220" y="34" width="104" height="56" rx="4" fill="#2a78d6"/>
+        <text x="272" y="60" font-size="20" font-weight="700" fill="#fff">2</text>
+        <rect x="330" y="34" width="104" height="56" rx="4" fill="#2a78d6"/>
+        <text x="382" y="60" font-size="20" font-weight="700" fill="#fff">3</text>
+        <text x="272" y="80" font-size="11" fill="#fff">目標區</text>
+        <rect x="440" y="34" width="104" height="56" rx="4" fill="#e3eefb"/>
+        <text x="492" y="60" font-size="20" font-weight="700" fill="#1d1d1b">4</text>
+        <rect x="550" y="34" width="130" height="56" rx="4" fill="#e3eefb"/>
+        <text x="615" y="60" font-size="20" font-weight="700" fill="#1d1d1b">5+</text>
+        <text x="615" y="80" font-size="11" fill="#52514e">太輕</text>
+      </g>
+      <g font-size="11.5" fill="#52514e" text-anchor="middle">
+        <text x="52" y="112">偶爾用在配件</text>
+        <text x="272" y="112" fill="#1d1d1b" font-weight="700">大部分的組都落在這裡</text>
+        <text x="560" y="112">太輕，不算有效組</text>
+      </g>
+      <text x="0" y="140" font-size="11" fill="#8a8984">深蹲、硬舉這類大動作不要做到 0。新手很難估準，先保守一點（留 2–3 下），練幾週就會越來越準。</text>
+    </svg>
+    <figcaption><b>圖 3　每組的用力程度。</b>大部分的組停在「還能再做 1–3 下」。</figcaption>
+  </figure>
+
+  <h2>雙重漸進法</h2>
+  <p>每個動作設一個次數範圍，例如 8–10 下。</p>
+  <ol>
+    <li>重量不變，每次訓練想辦法多做一兩下。</li>
+    <li>所有組都做到上限（10 下）後，下次加重量，次數回到下限（8 下）重新開始。</li>
+    <li>每次加多少：上肢 1–2.5 公斤，下肢 2.5–5 公斤。側平舉、彎舉這類小動作加不上重量很正常，多加次數就好。</li>
+  </ol>
+
+  <figure>
+    <svg id="dp" viewBox="0 0 680 262" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="雙重漸進法示例"></svg>
+    <figcaption><b>圖 4　雙重漸進法示例（臥推，8–10 下，3 組）。</b>次數一路往上加，三組都做到 10 下就加重量，次數回到 8 下再往上爬。</figcaption>
+  </figure>
+
+  <h2>每次訓練的流程</h2>
+  <ol>
+    <li><b>動態熱身 5–10 分鐘</b>（第 6 章）。</li>
+    <li><b>爆發力 5–10 分鐘</b>（有安排的那天）。</li>
+    <li><b>主項：</b>先做 2–3 組由輕到重的熱身組，再做正式組。組間休息 2–3 分鐘。</li>
+    <li><b>配件：</b>組間休息 1–2 分鐘；可以兩個動作輪流做（超級組）來省時間。</li>
+    <li><b>練後伸展 5 分鐘</b>，記錄這次的重量和次數。</li>
+  </ol>
+
+  <h2>卡關怎麼辦</h2>
+  <figure>
+    <svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="卡關處理流程">
+      <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8a8984"/></marker></defs>
+      <g font-size="12.5" fill="#1d1d1b" text-anchor="middle">
+        <rect x="0" y="10" width="150" height="70" rx="6" fill="#f4f3ef" stroke="#dcdad3"/>
+        <text x="75" y="40" font-weight="700">同一個動作</text>
+        <text x="75" y="60">連續 3 次沒進步</text>
+        <rect x="176" y="10" width="150" height="70" rx="6" fill="#e3eefb"/>
+        <text x="251" y="34" font-weight="700">先查生活</text>
+        <text x="251" y="54">睡夠了嗎？</text>
+        <text x="251" y="71">吃夠了嗎？</text>
+        <rect x="352" y="10" width="150" height="70" rx="6" fill="#e3eefb"/>
+        <text x="427" y="34" font-weight="700">再查練法</text>
+        <text x="427" y="54">動作、休息時間</text>
+        <text x="427" y="71">每次都一樣嗎？</text>
+        <rect x="528" y="10" width="152" height="70" rx="6" fill="#2a78d6"/>
+        <text x="604" y="34" font-weight="700" fill="#fff">還是卡住</text>
+        <text x="604" y="54" fill="#fff">換次數範圍</text>
+        <text x="604" y="71" fill="#fff">或換相近動作</text>
+      </g>
+      <g stroke="#8a8984" stroke-width="1.6" marker-end="url(#ar)">
+        <line x1="152" y1="45" x2="173" y2="45"/><line x1="328" y1="45" x2="349" y2="45"/><line x1="504" y1="45" x2="525" y2="45"/>
+      </g>
+      <g font-size="11.5" fill="#52514e">
+        <text x="528" y="100">例：8–10 下改成 10–12 下；</text>
+        <text x="528" y="117">槓鈴臥推改成啞鈴臥推</text>
+      </g>
+      <rect x="0" y="140" width="680" height="84" rx="6" fill="#fdf2d9"/>
+      <g font-size="12.5" fill="#1d1d1b">
+        <text x="16" y="166" font-weight="700">兩個例外</text>
+        <text x="16" y="188">・減脂期：力量能維持住就算成功，不用每次都進步。</text>
+        <text x="16" y="208">・別太快換動作：換得太頻繁，反而看不出自己有沒有進步。</text>
+      </g>
+    </svg>
+    <figcaption><b>圖 5　卡關的處理順序。</b>大部分卡關是睡眠或飲食的問題，不是課表的問題。</figcaption>
+  </figure>
+
+  <h2>減量週</h2>
+  <p>大約每 6–8 週安排一次，或在明顯疲勞、關節痠、連續卡關時提前安排：<b>組數減半，重量不變或略降</b>，維持一週再恢復。</p>
+</section>
+
+<!-- ============ 第 4 章 ============ -->
+<section class="chapter">
+  <div class="chap-no">第 4 章</div>
+  <h1>選一套課表</h1>
+  <p class="lead">大多數人每週練三次就夠，重點是每個肌群練到兩次、每週約 10 組，而且能長期做下去。</p>
+
+  <figure>
+    <div class="grid3">
+      <div class="card" style="border-top:4px solid #8fbbee">
+        <div class="h">A　新手全身</div>
+        <p style="margin:0 0 1.5mm">每週 3 次 · 每次 45–60 分鐘</p>
+        <ul><li>練不到半年</li><li>還不會深蹲、硬舉</li><li>先練 8–12 週</li></ul>
+      </div>
+      <div class="card" style="border-top:4px solid #2a78d6">
+        <div class="h">B　標準三練（主力）</div>
+        <p style="margin:0 0 1.5mm">每週 3 次 · 每次 60–75 分鐘</p>
+        <ul><li>動作已經熟練</li><li>大多數人練好幾年都夠</li><li>本手冊的週課表用這套</li></ul>
+      </div>
+      <div class="card" style="border-top:4px solid #1d1d1b">
+        <div class="h">C　進階四練</div>
+        <p style="margin:0 0 1.5mm">每週 4 次 · 每次 60–75 分鐘</p>
+        <ul><li>認真練 1–2 年以上</li><li>飲食睡眠都做到，仍卡 2 個月</li><li>每週真的有 4 天空</li></ul>
+      </div>
+    </div>
+    <figcaption><b>圖 6　三套課表怎麼選。</b>由左往右升級；忙的時候可以退回去。</figcaption>
+  </figure>
+
+  <h2>A　新手全身（第 1–12 週）</h2>
+  <p>A、B 兩天輪流，每週 3 次：第一週 A-B-A，第二週 B-A-B。重量選「做完還能再做 3 下」的輕重量，專心把動作練標準。</p>
+  <div class="grid2">
+    <div class="plan">
+      <div class="ph">A 日 <span>約 13 組</span></div>
+      <table>
+        <tr><td>高腳杯深蹲</td><td class="n">3 × 8–12</td></tr>
+        <tr><td>啞鈴臥推</td><td class="n">3 × 8–12</td></tr>
+        <tr><td>滑輪下拉</td><td class="n">3 × 8–12</td></tr>
+        <tr><td>啞鈴羅馬尼亞硬舉</td><td class="n">2 × 8–12</td></tr>
+        <tr><td>棒式</td><td class="n">2 × 20–40 秒</td></tr>
+      </table>
+    </div>
+    <div class="plan">
+      <div class="ph">B 日 <span>約 13 組</span></div>
+      <table>
+        <tr><td>腿推或分腿蹲</td><td class="n">3 × 8–12</td></tr>
+        <tr><td>坐姿划船</td><td class="n">3 × 8–12</td></tr>
+        <tr><td>啞鈴肩推</td><td class="n">3 × 8–12</td></tr>
+        <tr><td>臀推</td><td class="n">2 × 10–15</td></tr>
+        <tr><td>死蟲</td><td class="n">2 × 每邊 8</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <h2>B　標準三練：下肢 ／ 上肢 ／ 全身</h2>
+  <p>週一、週三、週五（或任何不連續的三天）。主項 6–10 下，配件 8–15 下。</p>
+
+  <div class="plan">
+    <div class="ph">週一　下肢 <span>15 組 · 約 70 分鐘（含跳箱）</span></div>
+    <table>
+      <tr><td>深蹲</td><td class="n">4 × 6–10</td></tr>
+      <tr><td>羅馬尼亞硬舉</td><td class="n">3 × 6–10</td></tr>
+      <tr><td>保加利亞分腿蹲（兼練平衡）</td><td class="n">3 × 每邊 8–12</td></tr>
+      <tr><td>腿彎舉</td><td class="n">3 × 10–15</td></tr>
+      <tr><td>Pallof 推（抗旋轉核心）</td><td class="n">2 × 每邊 10</td></tr>
+    </table>
+  </div>
+  <div class="plan">
+    <div class="ph">週三　上肢 <span>23 組 · 約 75 分鐘（含藥球）</span></div>
+    <table>
+      <tr><td>臥推</td><td class="n">4 × 6–10</td></tr>
+      <tr><td>引體向上（做不到 6 下就用滑輪下拉）</td><td class="n">4 × 6–10</td></tr>
+      <tr><td>站姿肩推</td><td class="n">3 × 6–10</td></tr>
+      <tr><td>俯身划船</td><td class="n">3 × 8–12</td></tr>
+      <tr><td>雙槓撐體（做不到就用窄握伏地挺身）</td><td class="n">3 × 8–12</td></tr>
+      <tr><td>側平舉 ＋ 二頭彎舉（超級組）</td><td class="n">各 3 × 10–15</td></tr>
+    </table>
+  </div>
+  <div class="plan">
+    <div class="ph">週五　全身 <span>20 組 · 約 70 分鐘</span></div>
+    <table>
+      <tr><td>上斜啞鈴臥推</td><td class="n">3 × 8–12</td></tr>
+      <tr><td>前蹲舉或腿推</td><td class="n">3 × 8–12</td></tr>
+      <tr><td>臀推</td><td class="n">3 × 8–12</td></tr>
+      <tr><td>單臂啞鈴划船</td><td class="n">3 × 8–12</td></tr>
+      <tr><td>單腳羅馬尼亞硬舉（兼練平衡）</td><td class="n">2 × 每邊 8–10</td></tr>
+      <tr><td>面拉 ＋ 側平舉（超級組）</td><td class="n">各 3 × 12–15</td></tr>
+    </table>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 680 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="標準三練每週組數">
+      <!-- x = 150 + sets*28 ; 10 -> 430, 15 -> 570 -->
+      <rect x="430" y="8" width="140" height="196" fill="#e0f4ec"/>
+      <text x="500" y="222" font-size="11" fill="#1d1d1b" text-anchor="middle" font-weight="700">建議範圍 10–15 組</text>
+      <g font-size="12.5" fill="#1d1d1b" text-anchor="end">
+        <text x="140" y="34">股四頭（大腿前側）</text>
+        <text x="140" y="66">臀部與腿後側</text>
+        <text x="140" y="98">胸</text>
+        <text x="140" y="130">背</text>
+        <text x="140" y="162">肩</text>
+        <text x="140" y="194">手臂</text>
+      </g>
+      <g fill="#2a78d6">
+        <path d="M150 20 h276 a4 4 0 0 1 4 4 v12 a4 4 0 0 1 -4 4 h-276 z"/>
+        <path d="M150 52 h304 a4 4 0 0 1 4 4 v12 a4 4 0 0 1 -4 4 h-304 z"/>
+        <path d="M150 84 h276 a4 4 0 0 1 4 4 v12 a4 4 0 0 1 -4 4 h-276 z"/>
+        <path d="M150 116 h276 a4 4 0 0 1 4 4 v12 a4 4 0 0 1 -4 4 h-276 z"/>
+        <path d="M150 148 h332 a4 4 0 0 1 4 4 v12 a4 4 0 0 1 -4 4 h-332 z"/>
+        <path d="M150 180 h164 a4 4 0 0 1 4 4 v12 a4 4 0 0 1 -4 4 h-164 z"/>
+      </g>
+      <g font-size="12" fill="#1d1d1b">
+        <text x="436" y="35">10</text>
+        <text x="464" y="67">11</text>
+        <text x="436" y="99">10</text>
+        <text x="436" y="131">10</text>
+        <text x="492" y="163">12</text>
+        <text x="324" y="195">6　＋推、拉時間接練到</text>
+      </g>
+      <line x1="150" y1="8" x2="150" y2="204" stroke="#1d1d1b" stroke-width="1"/>
+      <g font-size="10.5" fill="#8a8984" text-anchor="middle">
+        <text x="150" y="240">0</text><text x="290" y="240">5</text><text x="430" y="240">10</text><text x="570" y="240">15</text>
+      </g>
+    </svg>
+    <figcaption><b>圖 7　標準三練每週的直接組數。</b>每個主要肌群都練到兩天、約 10 組。胸想多練，週五加 2 組飛鳥即可。</figcaption>
+  </figure>
+
+  <h2>C　進階四練：上肢 ／ 下肢 × 2</h2>
+  <p>週一上肢 A、週二下肢 A、週四上肢 B、週五下肢 B。每個肌群每週約 12–16 組。改成四練後，有氧移到休息日，或接在重量訓練後面做。</p>
+  <div class="grid2">
+    <div class="plan">
+      <div class="ph">上肢 A</div>
+      <table>
+        <tr><td>臥推</td><td class="n">4 × 6–10</td></tr>
+        <tr><td>引體向上</td><td class="n">4 × 6–10</td></tr>
+        <tr><td>站姿肩推</td><td class="n">3 × 6–10</td></tr>
+        <tr><td>俯身划船</td><td class="n">3 × 8–12</td></tr>
+        <tr><td>側平舉 ＋ 彎舉</td><td class="n">各 3 × 10–15</td></tr>
+      </table>
+    </div>
+    <div class="plan">
+      <div class="ph">下肢 A</div>
+      <table>
+        <tr><td>深蹲</td><td class="n">4 × 6–10</td></tr>
+        <tr><td>羅馬尼亞硬舉</td><td class="n">3 × 6–10</td></tr>
+        <tr><td>腿彎舉</td><td class="n">3 × 10–15</td></tr>
+        <tr><td>提踵</td><td class="n">3 × 10–15</td></tr>
+        <tr><td>懸垂舉腿</td><td class="n">3 × 8–12</td></tr>
+      </table>
+    </div>
+    <div class="plan">
+      <div class="ph">上肢 B</div>
+      <table>
+        <tr><td>上斜啞鈴臥推</td><td class="n">3 × 8–12</td></tr>
+        <tr><td>滑輪下拉</td><td class="n">3 × 8–12</td></tr>
+        <tr><td>單臂啞鈴划船</td><td class="n">3 × 8–12</td></tr>
+        <tr><td>雙槓撐體</td><td class="n">3 × 8–12</td></tr>
+        <tr><td>面拉 ＋ 側平舉</td><td class="n">各 3 × 12–15</td></tr>
+        <tr><td>三頭伸展</td><td class="n">3 × 10–15</td></tr>
+      </table>
+    </div>
+    <div class="plan">
+      <div class="ph">下肢 B</div>
+      <table>
+        <tr><td>硬舉或腿推</td><td class="n">3 × 6–10</td></tr>
+        <tr><td>保加利亞分腿蹲</td><td class="n">3 × 每邊 8–12</td></tr>
+        <tr><td>臀推</td><td class="n">3 × 8–12</td></tr>
+        <tr><td>單腳羅馬尼亞硬舉</td><td class="n">2 × 每邊 8–10</td></tr>
+        <tr><td>Pallof 推</td><td class="n">2 × 每邊 10</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <h2>沒有器材時</h2>
+  <table>
+    <tr><th style="width:24%">部位</th><th>動作</th></tr>
+    <tr><td>推</td><td>伏地挺身 → 腳墊高伏地挺身 → 窄握伏地挺身</td></tr>
+    <tr><td>拉</td><td>引體向上；沒有單槓就用桌下反向划船、彈力帶划船</td></tr>
+    <tr><td>腿</td><td>背包深蹲、分腿蹲、登階、單腳臀橋</td></tr>
+    <tr><td>怎麼加難度</td><td>先加次數 → 下放放慢到 3 秒 → 背包加重 → 換更難的變化</td></tr>
+  </table>
+</section>
+
+<!-- ============ 第 5 章 ============ -->
+<section class="chapter">
+  <div class="chap-no">第 5 章</div>
+  <h1>有氧與心肺</h1>
+  <p class="lead">每週約 150 分鐘中等強度，或 75 分鐘高強度，或兩者混搭。照強度算，不照活動名稱算。</p>
+
+  <h2>用「能不能說話」判斷強度</h2>
+  <figure>
+    <svg viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="說話測試判斷運動強度">
+      <rect x="0"   y="10" width="222" height="120" rx="6" fill="#e3eefb"/>
+      <rect x="229" y="10" width="222" height="120" rx="6" fill="#8fbbee"/>
+      <rect x="458" y="10" width="222" height="120" rx="6" fill="#2a78d6"/>
+      <g font-size="16" font-weight="700" text-anchor="middle">
+        <text x="111" y="40" fill="#1d1d1b">輕鬆</text>
+        <text x="340" y="40" fill="#1d1d1b">中等強度</text>
+        <text x="569" y="40" fill="#fff">高強度</text>
+      </g>
+      <g font-size="12.5" text-anchor="middle">
+        <text x="111" y="68" fill="#1d1d1b">可以唱歌</text>
+        <text x="111" y="90" fill="#52514e">散步、逛街</text>
+        <text x="111" y="112" fill="#52514e">不計入有氧量</text>
+        <text x="340" y="68" fill="#1d1d1b">能說完整句子，唱不了歌</text>
+        <text x="340" y="90" fill="#1d1d1b">快走、爬坡走、騎車、慢跑</text>
+        <text x="340" y="112" fill="#1d1d1b">1 分鐘算 1 分鐘</text>
+        <text x="569" y="68" fill="#fff">只能說幾個字</text>
+        <text x="569" y="90" fill="#fff">間歇、快跑、爬坡衝刺</text>
+        <text x="569" y="112" fill="#fff" font-weight="700">1 分鐘算 2 分鐘</text>
+      </g>
+      <defs><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#52514e"/></marker></defs>
+      <line x1="10" y1="152" x2="670" y2="152" stroke="#52514e" stroke-width="1.5" marker-end="url(#ar2)"/>
+      <text x="10" y="178" font-size="11.5" fill="#52514e">越來越喘</text>
+      <text x="340" y="178" font-size="11.5" fill="#52514e" text-anchor="middle">常說的「二區」大約落在中等強度的前半段</text>
+    </svg>
+    <figcaption><b>圖 8　說話測試。</b>不用心率錶也能判斷；有心率錶的話，中等強度大約是最大心率的 64–76%，但每個人差異很大。</figcaption>
+  </figure>
+
+  <h2>建議的配法</h2>
+  <ul>
+    <li><b>中等強度：</b>每週 2–3 次，每次 30–60 分鐘。</li>
+    <li><b>高強度：</b>每週 1 次。例如 4 組「4 分鐘用力、3 分鐘輕鬆」，共約 30 分鐘。</li>
+    <li><b>日常步數：</b>每天 7,000–10,000 步照常走。速度快到「唱不了歌」的快走，可以算進有氧量。</li>
+    <li><b>心肺底子差：</b>先用爬坡快走；走得太輕鬆、心跳拉不上來，再換成慢跑。</li>
+  </ul>
+
+  <table>
+    <tr><th style="width:18%">方式</th><th style="width:40%">優點</th><th>注意</th></tr>
+    <tr><td>爬坡快走</td><td>衝擊最小，最容易達到中等強度</td><td>體能好的人可能心跳拉不上來</td></tr>
+    <tr><td>騎車</td><td>衝擊小，最不影響腿部訓練</td><td>對骨骼刺激少</td></tr>
+    <tr><td>慢跑</td><td>效率高，有助骨密度</td><td>著地衝擊約體重 2–3 倍；練腿隔天先避開較好</td></tr>
+    <tr><td>游泳</td><td>幾乎零衝擊</td><td>對骨骼刺激最少</td></tr>
+    <tr><td>球類、爬山</td><td>好玩，容易持續</td><td>強度忽高忽低，大概估就好</td></tr>
+  </table>
+
+  <div class="box tip">
+    <div class="t">有氧會不會影響長肌肉？</div>
+    <p>合理的量不太會。想優先長肌肉的話：同一天先做重量訓練、再做有氧；能分開幾個小時更好，但不是硬性規定。跑步比騎車更容易影響腿部訓練。</p>
+  </div>
+</section>
+
+<!-- ============ 第 6 章 ============ -->
+<section class="chapter">
+  <div class="chap-no">第 6 章</div>
+  <h1>爆發力、活動度、平衡</h1>
+  <p class="lead">這三項不需要另外排時間，每次花 5–10 分鐘，放進熱身或重量訓練裡。</p>
+
+  <h2>爆發力：每週 2 次，每次 5–10 分鐘，放在熱身之後</h2>
+  <table>
+    <tr><th style="width:18%">部位</th><th style="width:44%">動作</th><th>組數</th></tr>
+    <tr><td>下肢</td><td>跳箱、立定跳遠</td><td>3 組 × 3–5 下</td></tr>
+    <tr><td>上肢</td><td>藥球胸前推拋、過頭砸球</td><td>3 組 × 5 下</td></tr>
+    <tr><td>全身</td><td>壺鈴擺盪；或 20–30 公尺短衝刺</td><td>3 組 × 10 下；衝刺 4–6 趟</td></tr>
+  </table>
+  <ul>
+    <li><b>每一下都全力、乾淨，累了就停。</b>這不是有氧，不要做到喘。</li>
+    <li><b>先學落地：</b>膝蓋對準腳尖、輕聲落地。體重較重或膝蓋不舒服，先用藥球拋擲代替跳躍。</li>
+    <li><b>衝刺：</b>先用七八成速度跑，幾週後再慢慢加快；腿後側拉傷過的人，先用飛輪衝刺代替。</li>
+  </ul>
+
+  <h2>活動度：練前動、練後拉</h2>
+  <ul>
+    <li><b>練前動態熱身（各 30–60 秒）：</b>髖關節繞圈、世界最偉大伸展、胸椎旋轉、彈力帶繞肩。練前不要長時間靜態伸展，會暫時降低力量。</li>
+    <li><b>練後靜態伸展（各 30–60 秒）：</b>練到的部位各拉一下，不痛為原則。久坐的人每天挑兩個：髖屈肌、胸、胸椎、腳踝。</li>
+  </ul>
+
+  <h2>平衡與核心：放進重量訓練</h2>
+  <ul>
+    <li><b>單腳動作每週至少 2 個：</b>保加利亞分腿蹲、單腳羅馬尼亞硬舉、登階。</li>
+    <li><b>核心每次挑 1 個、做 2–3 組：</b>Pallof 推、單手農夫走路、棒式、死蟲。這些練的是「穩住身體」，比捲腹更能保護腰。</li>
+    <li><b>生活裡順便練：</b>刷牙時單腳站 30 秒，熟練後閉眼。</li>
+  </ul>
+
+  <h2>自我檢查（每 6–8 週做一次）</h2>
+  <table>
+    <tr><th style="width:36%">測驗</th><th style="width:32%">合格標準</th><th>做不到時</th></tr>
+    <tr><td>腳跟不離地，蹲到大腿低於水平</td><td>能穩穩蹲下、站起</td><td>加強腳踝、髖關節活動度</td></tr>
+    <tr><td>雙手伸直舉過頭</td><td>手臂貼近耳朵，腰不拱</td><td>加強胸椎旋轉、繞肩</td></tr>
+    <tr><td>單腳站</td><td>睜眼輕鬆撐 30 秒；閉眼約 10 秒（40 歲以下）</td><td>多做單腳動作和單腳站</td></tr>
+    <tr><td>立定跳遠</td><td>和自己比，維持或進步</td><td>保持每週 2 次爆發力練習</td></tr>
+  </table>
+</section>
+
+<!-- ============ 第 7 章 ============ -->
+<section class="chapter">
+  <div class="chap-no">第 7 章</div>
+  <h1>一週怎麼排</h1>
+  <p class="lead">每週約 5–6 小時，就能把六件事都練到。下面是標準三練的範例，順序可以照自己的行程換。</p>
+
+  <figure>
+    <svg viewBox="0 0 680 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="每週課表範例">
+      <g font-size="13" font-weight="700" fill="#1d1d1b" text-anchor="middle">
+        <text x="47" y="20">週一</text><text x="144" y="20">週二</text><text x="241" y="20">週三</text>
+        <text x="338" y="20">週四</text><text x="435" y="20">週五</text><text x="532" y="20">週六</text><text x="629" y="20">週日</text>
+      </g>
+      <!-- column x: 0,97,194,291,388,485,582 width 92 -->
+      <g>
+        <rect x="0"   y="32" width="92" height="196" rx="5" fill="#e3eefb"/><rect x="0" y="32" width="5" height="196" fill="#2a78d6"/>
+        <rect x="97"  y="32" width="92" height="196" rx="5" fill="#e0f4ec"/><rect x="97" y="32" width="5" height="196" fill="#1baf7a"/>
+        <rect x="194" y="32" width="92" height="196" rx="5" fill="#e3eefb"/><rect x="194" y="32" width="5" height="196" fill="#2a78d6"/>
+        <rect x="291" y="32" width="92" height="196" rx="5" fill="#fdebe3"/><rect x="291" y="32" width="5" height="196" fill="#eb6834"/>
+        <rect x="388" y="32" width="92" height="196" rx="5" fill="#e3eefb"/><rect x="388" y="32" width="5" height="196" fill="#2a78d6"/>
+        <rect x="485" y="32" width="92" height="196" rx="5" fill="#e0f4ec"/><rect x="485" y="32" width="5" height="196" fill="#1baf7a"/>
+        <rect x="582" y="32" width="92" height="196" rx="5" fill="#f1f0ec"/><rect x="582" y="32" width="5" height="196" fill="#b5b3ab"/>
+      </g>
+      <g font-size="13.5" font-weight="700" fill="#1d1d1b">
+        <text x="13" y="60">下肢</text><text x="110" y="60">中等有氧</text><text x="207" y="60">上肢</text>
+        <text x="304" y="60">高強度</text><text x="401" y="60">全身</text><text x="498" y="60">中等有氧</text><text x="595" y="60">休息</text>
+      </g>
+      <g font-size="11.5" fill="#52514e">
+        <text x="13" y="84">重量訓練</text><text x="13" y="104">＋跳箱</text><text x="13" y="124">＋分腿蹲</text>
+        <text x="110" y="84">騎車或</text><text x="110" y="104">爬坡快走</text><text x="110" y="124">＋伸展</text>
+        <text x="207" y="84">重量訓練</text><text x="207" y="104">＋藥球拋</text>
+        <text x="304" y="84">4 × 4 分鐘</text><text x="304" y="104">間歇</text><text x="304" y="124">＋活動度</text>
+        <text x="401" y="84">重量訓練</text><text x="401" y="104">＋單腳硬舉</text>
+        <text x="498" y="84">或爬山、</text><text x="498" y="104">球類</text>
+        <text x="595" y="84">散步</text>
+      </g>
+      <g font-size="14" font-weight="700" fill="#1d1d1b">
+        <text x="13" y="214">70 分</text><text x="110" y="214">45–60 分</text><text x="207" y="214">75 分</text>
+        <text x="304" y="214">30 分</text><text x="401" y="214">70 分</text><text x="498" y="214">60 分</text><text x="595" y="214">—</text>
+      </g>
+      <!-- legend -->
+      <g font-size="11.5" fill="#1d1d1b">
+        <rect x="0" y="250" width="12" height="12" rx="2" fill="#2a78d6"/><text x="18" y="261">重量訓練</text>
+        <rect x="100" y="250" width="12" height="12" rx="2" fill="#1baf7a"/><text x="118" y="261">中等強度有氧</text>
+        <rect x="224" y="250" width="12" height="12" rx="2" fill="#eb6834"/><text x="242" y="261">高強度有氧</text>
+        <rect x="336" y="250" width="12" height="12" rx="2" fill="#b5b3ab"/><text x="354" y="261">休息</text>
+      </g>
+      <rect x="0" y="278" width="674" height="48" rx="5" fill="#f4f3ef"/>
+      <text x="14" y="300" font-size="11.5" fill="#1d1d1b">有氧合計：中等約 105–120 分鐘 ＋ 高強度 16 分鐘 × 2 ≈ 140–150 分鐘。</text>
+      <text x="14" y="318" font-size="11.5" fill="#1d1d1b">平日再加幾段快走，就輕鬆超過 150 分鐘。每天另外走 7,000–10,000 步。</text>
+    </svg>
+    <figcaption><b>圖 9　每週課表範例。</b>重量訓練之間隔一天；高強度有氧不排在練腿隔天。</figcaption>
+  </figure>
+
+  <h2>排課的幾個參考</h2>
+  <ul>
+    <li>同一個肌群，通常隔 48 小時左右再練。只要下次表現沒退步，間隔短一點也沒關係。</li>
+    <li>跑步、高強度間歇盡量不排在練腿隔天；騎車、快走比較沒影響。</li>
+    <li>高強度訓練最好在睡前 1–2 小時結束。</li>
+    <li>行程打亂了就順延，不用硬補。</li>
+  </ul>
+
+  <div class="box tip">
+    <div class="t">忙碌週的最低版本</div>
+    <p>2–3 次全身重量訓練（每次 40 分鐘，只做主項）＋ 1–2 次 30 分鐘有氧。<b>維持住就是成功。</b></p>
+  </div>
+</section>
+
+<!-- ============ 第 8 章 ============ -->
+<section class="chapter">
+  <div class="chap-no">第 8 章</div>
+  <h1>飲食</h1>
+  <p class="lead">吃夠蛋白質，熱量配合目標，八成吃原型食物、兩成保留彈性。</p>
+
+  <figure>
+    <svg viewBox="0 0 680 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="每餐餐盤比例">
+      <!-- plate center 140,135 r 115 -->
+      <circle cx="140" cy="135" r="124" fill="#f4f3ef" stroke="#dcdad3" stroke-width="2"/>
+      <path d="M140 135 L140 20 A115 115 0 0 0 140 250 Z" fill="#1baf7a"/>
+      <path d="M142 135 L142 20 A115 115 0 0 1 257 135 Z" fill="#eb6834"/>
+      <path d="M142 137 L257 137 A115 115 0 0 1 142 250 Z" fill="#eda100"/>
+      <g font-size="15" font-weight="700" fill="#fff" text-anchor="middle">
+        <text x="88" y="140">蔬菜</text>
+        <text x="196" y="96">蛋白質</text>
+      </g>
+      <text x="196" y="186" font-size="15" font-weight="700" fill="#1d1d1b" text-anchor="middle">主食</text>
+      <!-- explanations -->
+      <g font-size="13" fill="#1d1d1b">
+        <rect x="300" y="22" width="14" height="14" rx="3" fill="#1baf7a"/>
+        <text x="322" y="34" font-weight="700">蔬菜：半個盤子</text>
+        <text x="322" y="54" fill="#52514e">至少兩個拳頭大，顏色越多越好</text>
+        <rect x="300" y="82" width="14" height="14" rx="3" fill="#eb6834"/>
+        <text x="322" y="94" font-weight="700">蛋白質：四分之一（一個手掌大小）</text>
+        <text x="322" y="114" fill="#52514e">肉、魚、蛋、豆腐、優格；約 25–40 公克蛋白質</text>
+        <rect x="300" y="142" width="14" height="14" rx="3" fill="#eda100"/>
+        <text x="322" y="154" font-weight="700">主食：四分之一（約一個拳頭）</text>
+        <text x="322" y="174" fill="#52514e">米飯、燕麥、地瓜、馬鈴薯；練得多的日子可以多一點</text>
+        <circle cx="307" cy="209" r="7" fill="#b5b3ab"/>
+        <text x="322" y="214" font-weight="700">好油：一個大拇指</text>
+        <text x="322" y="234" fill="#52514e">橄欖油、堅果、酪梨；水果每天 2 份，飯後或點心吃</text>
+      </g>
+    </svg>
+    <figcaption><b>圖 10　每餐的餐盤比例。</b>不想算數字的人，每餐照這樣吃就八九不離十。</figcaption>
+  </figure>
+
+  <h2>蛋白質</h2>
+  <ul>
+    <li><b>每公斤體重每天 1.6–2.2 公克</b>，多數人吃到 1.6 就夠，分 3–4 餐吃。</li>
+    <li><b>體重過重的人，用「目標體重」來算</b>，不要用現在的體重。例：目標 70 公斤 → 每天約 110–150 公克，每餐 30–40 公克。</li>
+    <li>來源：雞蛋、雞胸、瘦牛肉、魚、豆腐、無糖優格、牛奶。吃不夠再用乳清蛋白補。</li>
+  </ul>
+
+  <h2>熱量：先看自己在哪個起點</h2>
+  <table>
+    <tr><th style="width:30%">你的起點</th><th style="width:30%">怎麼吃</th><th>說明</th></tr>
+    <tr><td>偏瘦、想長肌肉</td><td>每天多吃約 5–10%</td><td>體重每月增加約 0.5–1 公斤；增加太快多半是脂肪</td></tr>
+    <tr><td>體重正常、肌肉不多的新手</td><td>維持熱量</td><td>先專心練，體態會自己變好，不必急著減重</td></tr>
+    <tr><td>體脂偏高</td><td>每天少吃 10–20%</td><td>每週體重下降 0.5–1%</td></tr>
+    <tr><td>肥胖或有慢性病</td><td>和醫生或營養師一起訂</td><td>不要自己大幅節食</td></tr>
+  </table>
+  <ul>
+    <li><b>越接近目標，減得越慢：</b>已經偏瘦、想保住肌肉，每週掉 0.5% 左右就好。例：70 公斤的人每週約 0.35 公斤。</li>
+    <li><b>長期減脂</b>可以每 8–12 週回到維持熱量 1–2 週，讓身體和心情喘口氣。</li>
+    <li>脂肪至少佔總熱量 20%；纖維每天 25–35 公克；蔬菜 3 份、水果 2 份。</li>
+  </ul>
+
+  <h2>一天怎麼吃（目標體重 70 公斤的例子）</h2>
+  <table>
+    <tr><th style="width:16%">餐次</th><th style="width:60%">內容</th><th class="n">蛋白質</th></tr>
+    <tr><td>早餐</td><td>雞蛋 2 顆、無糖優格 1 盒、燕麥 1 小碗</td><td class="n">約 30 g</td></tr>
+    <tr><td>午餐</td><td>便當：一掌雞腿或魚、半盤青菜、一拳白飯</td><td class="n">約 35 g</td></tr>
+    <tr><td>點心</td><td>牛奶或無糖豆漿 1 杯、水果 1 份</td><td class="n">約 10 g</td></tr>
+    <tr><td>晚餐</td><td>一掌瘦肉或豆腐、半盤青菜、一拳地瓜</td><td class="n">約 35 g</td></tr>
+    <tr><td>需要時</td><td>練後或睡前補一份乳清蛋白</td><td class="n">約 25 g</td></tr>
+    <tr><td><b>合計</b></td><td>正好落在每天 110–150 g 的範圍</td><td class="n"><b>約 135 g</b></td></tr>
+  </table>
+
+  <h2>彈性規則</h2>
+  <ul>
+    <li><b>八成原型食物，兩成喜歡的食物。</b>不需要完全戒糖，添加糖控制在每天總熱量 10% 以內。</li>
+    <li><b>聚餐、節日事先算進整週</b>，吃完隔天照常吃，不用餓肚子補償。</li>
+    <li><b>酒少喝：</b>熱量高，又會影響睡眠和恢復。</li>
+  </ul>
+
+  <h2>補充品</h2>
+  <table>
+    <tr><th style="width:22%">品項</th><th style="width:30%">用法</th><th>說明</th></tr>
+    <tr><td>肌酸</td><td>每天 3–5 公克</td><td>證據最充分的補充品，任何時間吃都可以</td></tr>
+    <tr><td>乳清蛋白</td><td>蛋白質不夠時補</td><td>本質就是食物，方便而已</td></tr>
+    <tr><td>咖啡因</td><td>睡前 8 小時以前</td><td>能提升訓練表現，但太晚喝會影響睡眠</td></tr>
+    <tr><td>維生素 D</td><td>先抽血檢查</td><td>日照少的人比較容易不足</td></tr>
+  </table>
+</section>
+
+<!-- ============ 第 9 章 ============ -->
+<section class="chapter">
+  <div class="chap-no">第 9 章</div>
+  <h1>睡眠與恢復</h1>
+  <p class="lead">訓練只是刺激，進步發生在休息的時候。恢復跟不上，練越多反而越退步。</p>
+
+  <h2>睡眠：每晚 7–9 小時</h2>
+  <p>睡不夠時，力量、長肌肉的效率、食慾控制會一起變差，減脂時掉的肌肉也更多。</p>
+  <div class="grid2">
+    <div class="card">
+      <div class="h">作息</div>
+      <ul><li>起床時間每天相差不超過 1 小時，週末也一樣</li><li>睡前 30–60 分鐘放下手機，至少調暗</li><li>高強度訓練最好在睡前 1–2 小時結束</li></ul>
+    </div>
+    <div class="card">
+      <div class="h">環境與飲品</div>
+      <ul><li>房間暗、安靜、偏涼（約 18–22°C）</li><li>咖啡因在睡前 8 小時停</li><li>酒會打亂深層睡眠，訓練期少喝</li></ul>
+    </div>
+  </div>
+
+  <h2>恢復管理</h2>
+  <ul>
+    <li><b>連續幾天睡不到 6 小時：</b>當週降低強度，不要硬撐。</li>
+    <li><b>工作或生活壓力大：</b>訓練量減少 20–30%，維持住就好。壓力會疊加，身體分不出是哪一種。</li>
+    <li><b>減脂期：</b>熱量少吃超過 25% 時，恢復和力量通常會明顯下滑。</li>
+    <li><b>減量週：</b>約每 6–8 週一次，或覺得累積疲勞時提前（見第 3 章）。</li>
+  </ul>
+
+  <div class="box warn">
+    <div class="t">疲勞提醒（不是診斷）</div>
+    <p>下面出現兩項以上，先休息 2–3 天，接著輕鬆練一週：</p>
+    <ul>
+      <li>早上起床的心跳比平常明顯偏高</li>
+      <li>力量連續兩週下滑</li>
+      <li>睡不好、沒動力、容易生病</li>
+    </ul>
+    <p>休息後還沒改善，或同時出現第 1 章「比體脂數字更重要的訊號」，就去看醫生。</p>
+  </div>
+</section>
+
+<!-- ============ 第 10 章 ============ -->
+<section class="chapter">
+  <div class="chap-no">第 10 章</div>
+  <h1>追蹤進度</h1>
+  <p class="lead">外型看趨勢，能力看測驗。不要只盯著體脂一個數字。</p>
+
+  <figure>
+    <svg id="wt" viewBox="0 0 680 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="每日體重與七日平均示意"></svg>
+    <figcaption><b>圖 11　每天的體重會跳來跳去（示意）。</b>單天可能差 1 公斤，多半是水分和食物；看「7 天平均」那條線往哪裡走就好。</figcaption>
+  </figure>
+
+  <table>
+    <tr><th style="width:14%">項目</th><th style="width:34%">怎麼量</th><th style="width:16%">多久一次</th><th>看什麼</th></tr>
+    <tr><td>體重</td><td>早上起床、上完廁所</td><td>每天</td><td>看每週平均的變化</td></tr>
+    <tr><td>腰圍</td><td>肚臍高度，自然吐氣後量</td><td>每 2 週</td><td>減脂期應該慢慢變小</td></tr>
+    <tr><td>照片</td><td>同光線、同角度，正面、側面、背面</td><td>每 4 週</td><td>眼睛看得到的變化</td></tr>
+    <tr><td>力量</td><td>記錄每次主項的重量和次數</td><td>每次訓練</td><td>增肌期穩定進步；減脂期維持就好</td></tr>
+    <tr><td>心肺</td><td>同一條路線的心跳和速度</td><td>每 6–8 週</td><td>同樣心跳下跑得更快</td></tr>
+    <tr><td>能力</td><td>第 6 章的自我檢查</td><td>每 6–8 週</td><td>維持或進步</td></tr>
+    <tr><td>恢復</td><td>早晨心跳、睡眠時數</td><td>每天</td><td>有沒有明顯異常</td></tr>
+  </table>
+
+  <div class="box tip">
+    <div class="t">什麼時候調整計畫</div>
+    <p>數字停滯 <b>2–3 週</b>再調整，不要因為一兩天的波動就改方向。調整時一次只改一件事（例如每天少吃 150–200 大卡），再觀察 2–3 週。</p>
+  </div>
+</section>
+
+<!-- ============ 第 11 章 ============ -->
+<section class="chapter">
+  <div class="chap-no">第 11 章</div>
+  <h1>長期維持與心態</h1>
+  <p class="lead">達到目標之後的日子，才是這套方法真正的主體。維持比追求容易得多，前提是生活方式本身撐得住。</p>
+
+  <h2>維持期怎麼練</h2>
+  <figure>
+    <svg viewBox="0 0 680 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="維持期減組數不減重量">
+      <g font-size="13" fill="#1d1d1b">
+        <text x="0" y="40" font-weight="700">增肌期</text>
+        <text x="0" y="106" font-weight="700">維持期</text>
+      </g>
+      <!-- each set block 30 wide gap 4 -->
+      <g fill="#2a78d6" id="blk1"></g>
+      <g fill="#2a78d6" id="blk2"></g>
+      <g font-size="12" fill="#52514e">
+        <text x="440" y="40">每個肌群每週 10 組 · 臥推 60 公斤</text>
+        <text x="440" y="106">每週 4–5 組 · 臥推<tspan font-weight="700" fill="#1d1d1b"> 還是 60 公斤</tspan></text>
+      </g>
+      <text x="0" y="158" font-size="12.5" fill="#1d1d1b">組數可以減到一半甚至三分之一，<tspan font-weight="700">但重量不要降</tspan>，肌肉和力量大多保得住。</text>
+    </svg>
+    <figcaption><b>圖 12　減組數，不減重量。</b>維持期每週 2–3 次重量訓練就夠，有氧照常。</figcaption>
+  </figure>
+
+  <h2>維持期怎麼吃</h2>
+  <ul>
+    <li>達標後，熱量回到「新體重的維持量」。一次回到位或分幾週慢慢加都可以，看 2–4 週的體重趨勢再微調。</li>
+    <li>體脂上下 2–3% 是正常的。出差、聚餐、忙碌之後回到原本的節奏就好，不需要補償。</li>
+  </ul>
+
+  <h2>保留好的部分</h2>
+  <p>「付出就有回報」的感覺、習慣一點點不舒服，這些是訓練帶來的好東西，值得留著。但不需要用分數或等級來評價自己的身體，那很容易變成焦慮。</p>
+
+  <div class="box warn">
+    <div class="t">心理警訊</div>
+    <p>出現以下情況，代表追求體態已經開始傷害生活，應該放寬標準，必要時找專業人士聊聊：</p>
+    <ul>
+      <li>吃了計畫外的東西就強烈自責，或用大量運動補償。</li>
+      <li>因為怕破壞飲食而拒絕聚餐。</li>
+      <li>每天反覆照鏡子、量體重，數字一變就影響整天心情。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 速查卡 ============ -->
+<section class="chapter">
+  <div class="chap-no">附錄</div>
+  <h1>一頁速查卡</h1>
+  <p class="lead">把這頁存在手機裡，忘了就看一眼。</p>
+  <div class="quick">
+    <div class="card"><div class="h">目標</div><ul><li>男性體脂約 10–15%，女性約 20–25%</li><li>腰圍小於身高的一半</li><li>看趨勢，不看單一數字</li></ul></div>
+    <div class="card"><div class="h">重量訓練</div><ul><li>每週 3 次（下肢／上肢／全身）</li><li>每個肌群每週 2 次、約 10 組</li><li>每組留 1–3 下；主項 6–10 下，配件 8–15 下</li><li>先加次數，再加重量</li></ul></div>
+    <div class="card"><div class="h">有氧</div><ul><li>每週 150 分鐘中等強度（高強度 1 分鐘算 2 分鐘）</li><li>中等：能說話、唱不了歌</li><li>每週 1 次間歇，每天 7,000–10,000 步</li></ul></div>
+    <div class="card"><div class="h">小劑量三項</div><ul><li>爆發力：每週 2 次、5–10 分鐘，全力、不喘</li><li>活動度：練前動態熱身，練後伸展</li><li>平衡：每週 2 個單腳動作，每次 1 個核心</li></ul></div>
+    <div class="card"><div class="h">飲食</div><ul><li>蛋白質 1.6–2.2 g／公斤（過重用目標體重算）</li><li>半盤蔬菜、一掌蛋白質、一拳主食</li><li>減脂每週 0.5–1%，越接近目標越慢</li><li>八成原型、兩成彈性；肌酸每天 3–5 g</li></ul></div>
+    <div class="card"><div class="h">睡眠與恢復</div><ul><li>每晚 7–9 小時，起床時間固定</li><li>每 6–8 週一次減量週</li><li>壓力大就少練 20–30%</li></ul></div>
+    <div class="card"><div class="h">卡關</div><ul><li>先查睡眠和飲食</li><li>再查動作和休息時間</li><li>最後才換次數範圍或動作</li><li>停滯 2–3 週再調整</li></ul></div>
+    <div class="card"><div class="h">安全</div><ul><li>肌肉痠：照練</li><li>關節小不適：減重或換動作</li><li>尖銳痛、越練越痛：停，看醫生</li><li>忙碌週：做最低版本也算數</li></ul></div>
+  </div>
+  <div class="end">AZ · 2026 年 10 月版　｜　本手冊為一般健身指南，不取代醫療建議。</div>
+</section>
+
+<script>
+// 圖 4：雙重漸進法
+(function(){
+  const svg=document.getElementById('dp'), NS='http://www.w3.org/2000/svg';
+  const data=[[60,[8,8,8]],[60,[9,9,8]],[60,[10,9,9]],[60,[10,10,10]],[62.5,[8,8,8]],[62.5,[9,9,8]],[62.5,[10,10,9]]];
+  const x0=60, w=70, gap=16, base=200, k=5;
+  const el=(t,a,txt)=>{const e=document.createElementNS(NS,t);for(const n in a)e.setAttribute(n,a[n]);if(txt!=null)e.textContent=txt;svg.appendChild(e);return e;};
+  // y grid
+  [0,10,20,30].forEach(v=>{const y=base-v*k; el('line',{x1:x0-6,x2:670,y1:y,y2:y,stroke:'#ecebe6'}); el('text',{x:x0-10,y:y+4,'font-size':10.5,fill:'#8a8984','text-anchor':'end'},v);});
+  el('text',{x:0,y:14,'font-size':11,fill:'#52514e'},'三組總次數');
+  data.forEach((d,i)=>{
+    const tot=d[1].reduce((a,b)=>a+b,0), h=tot*k, x=x0+i*(w+gap), y=base-h;
+    const hit=d[1].every(r=>r===10);
+    const fill= d[0]===60 ? (hit?'#2a78d6':'#8fbbee') : '#eb6834';
+    el('path',{d:`M${x} ${base} V${y+4} a4 4 0 0 1 4 -4 H${x+w-4} a4 4 0 0 1 4 4 V${base} Z`,fill});
+    el('text',{x:x+w/2,y:y-8,'font-size':12,'text-anchor':'middle',fill:'#1d1d1b','font-weight':hit?700:400},d[1].join('·'));
+    el('text',{x:x+w/2,y:base+18,'font-size':11,'text-anchor':'middle',fill:'#52514e'},'第 '+(i+1)+' 次');
+  });
+  el('line',{x1:x0-6,x2:670,y1:base,y2:base,stroke:'#1d1d1b'});
+  // weight bands
+  const bx=(i)=>x0+i*(w+gap);
+  el('rect',{x:bx(0),y:base+28,width:bx(3)+w-bx(0),height:20,rx:3,fill:'#e3eefb'});
+  el('text',{x:(bx(0)+bx(3)+w)/2,y:base+42,'font-size':11.5,'text-anchor':'middle',fill:'#1d1d1b'},'60 公斤');
+  el('rect',{x:bx(4),y:base+28,width:bx(6)+w-bx(4),height:20,rx:3,fill:'#fdebe3'});
+  el('text',{x:(bx(4)+bx(6)+w)/2,y:base+42,'font-size':11.5,'text-anchor':'middle',fill:'#1d1d1b'},'加到 62.5 公斤，次數回到 8 下');
+  el('text',{x:bx(3)+w/2,y:22,'font-size':11.5,'text-anchor':'middle',fill:'#2a78d6','font-weight':700},'全部 10 下 → 加重');
+})();
+
+// 圖 11：體重趨勢
+(function(){
+  const svg=document.getElementById('wt'), NS='http://www.w3.org/2000/svg';
+  const el=(t,a,txt)=>{const e=document.createElementNS(NS,t);for(const n in a)e.setAttribute(n,a[n]);if(txt!=null)e.textContent=txt;svg.appendChild(e);return e;};
+  let s=7; const rnd=()=>{s=(s*9301+49297)%233280;return s/233280;};
+  const N=42, d=[];
+  for(let i=0;i<N;i++){ const trend=72-1.4*(i/(N-1)); const wk=(i%7===0||i%7===6)?0.35:0; d.push(+(trend+(rnd()-0.5)*1.1+wk).toFixed(2)); }
+  const avg=d.map((_,i)=>{const a=d.slice(Math.max(0,i-6),i+1);return a.reduce((p,c)=>p+c,0)/a.length;});
+  const X=i=>60+i*(600/(N-1)), lo=69.8, hi=73.2, Y=v=>20+(hi-v)/(hi-lo)*200;
+  [70,71,72,73].forEach(v=>{el('line',{x1:60,x2:660,y1:Y(v),y2:Y(v),stroke:'#ecebe6'});el('text',{x:52,y:Y(v)+4,'font-size':10.5,fill:'#8a8984','text-anchor':'end'},v);});
+  el('text',{x:0,y:12,'font-size':11,fill:'#52514e'},'體重（公斤）');
+  d.forEach((v,i)=>el('circle',{cx:X(i),cy:Y(v),r:3.2,fill:'#b5b3ab'}));
+  el('path',{d:avg.slice(6).map((v,j)=>(j?'L':'M')+X(j+6).toFixed(1)+' '+Y(v).toFixed(1)).join(' '),fill:'none',stroke:'#2a78d6','stroke-width':2.5,'stroke-linejoin':'round'});
+  [0,7,14,21,28,35].forEach((i,w)=>el('text',{x:X(i+3),y:250,'font-size':11,fill:'#8a8984','text-anchor':'middle'},'第 '+(w+1)+' 週'));
+  el('circle',{cx:430,cy:14,r:3.2,fill:'#b5b3ab'}); el('text',{x:440,y:18,'font-size':11.5,fill:'#1d1d1b'},'每天的體重');
+  el('line',{x1:530,x2:552,y1:14,y2:14,stroke:'#2a78d6','stroke-width':2.5}); el('text',{x:558,y:18,'font-size':11.5,fill:'#1d1d1b'},'7 天平均');
+})();
+
+// 圖 12：組數方塊
+(function(){
+  const NS='http://www.w3.org/2000/svg';
+  const draw=(id,n,y,fade)=>{const g=document.getElementById(id);
+    for(let i=0;i<10;i++){const r=document.createElementNS(NS,'rect');
+      r.setAttribute('x',70+i*36);r.setAttribute('y',y);r.setAttribute('width',32);r.setAttribute('height',28);r.setAttribute('rx',4);
+      if(i>=n){r.setAttribute('fill','#fff');r.setAttribute('stroke','#c9c7bf');r.setAttribute('stroke-dasharray','3 3');}
+      g.appendChild(r);} };
+  draw('blk1',10,20); draw('blk2',5,86);
+})();
+</script>
+</body>
+</html>
