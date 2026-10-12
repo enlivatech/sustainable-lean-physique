@@ -52,6 +52,14 @@
 
 *Bó jī* (薄肌, literally "thin muscle"; the idea is often called 薄肌理論, "bó jī theory") is the Chinese-internet term for a lean, athletic look: moderate muscle at a low-but-livable body fat, close to what English speakers call a *lean physique* or *swimmer's build*. This repo is a Traditional Chinese handbook that turns a popular short-term version of the idea into a sustainable plan: twice-weekly training per muscle, real cardio, sleep and recovery, flexible eating, and a maintenance phase.
 
+## 授權
+
+本倉庫的內容（手冊、對比圖、原始檔）以 [CC BY 4.0](LICENSE) 授權釋出：可以自由轉載、翻譯、改編，商用也可以，只要標明出處並註明是否有修改。
+
+標明出處的寫法，例如：
+
+> 《可持續薄肌手冊》，AZ，CC BY 4.0，https://github.com/enlivatech/sustainable-lean-physique
+
 ## 聲明
 
 本手冊是給一般成年人的健身指南，不取代醫療建議。有疾病、舊傷、懷孕或正在服藥，開始前先問醫生。
