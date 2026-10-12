@@ -2,7 +2,7 @@
 
 [繁體中文](README.md) · **简体中文** · [English](README.en.md)
 
-好看、好用、练得久的身体——一本照着做就行的训练与生活指南。目前版本 **V1.1**。
+好看、好用、练得久的身体——一本照着做就行的训练与生活指南。目前版本 **V1.2**。
 
 ## 下载
 
@@ -63,6 +63,7 @@
 
 ## 版本记录
 
+- **V1.2**（2026-10-12）：补充品一节加上“不必花钱的”（BCAA、燃脂剂、“提升睾酮”补充品）和安全提醒（咖啡因每日上限、第三方检测标志）。
 - **V1.1**（2026-10-12）：添加简体中文、英文版；加上原版视频链接；落款改为 Enliva LLC；CC BY 4.0 授权。
 - **V1.0**（2026-10-12）：繁体中文版首次发布。
 
@@ -72,7 +73,7 @@
 
 标明出处的写法，例如：
 
-> 《可持续薄肌手册》V1.1，Enliva LLC，CC BY 4.0，https://github.com/enlivatech/sustainable-lean-physique
+> 《可持续薄肌手册》V1.2，Enliva LLC，CC BY 4.0，https://github.com/enlivatech/sustainable-lean-physique
 
 ## 声明
 

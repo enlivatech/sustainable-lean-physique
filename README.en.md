@@ -2,7 +2,7 @@
 
 [繁體中文](README.md) · [简体中文](README.zh-Hans.md) · **English**
 
-A body that looks good, works well, and lasts: a practical training and lifestyle guide you can simply follow. Current version **V1.1**.
+A body that looks good, works well, and lasts: a practical training and lifestyle guide you can simply follow. Current version **V1.2**.
 
 ## Download
 
@@ -63,6 +63,7 @@ To edit: change `src/zh-Hant/` and `src/en/` → run `python tools/zh_hans.py` �
 
 ## Changelog
 
+- **V1.2** (2026-10-12): Supplements section adds “Skip these” (BCAAs, fat burners, “testosterone boosters”) and safety notes (daily caffeine limit, third-party testing seals).
 - **V1.1** (2026-10-12): Added Simplified Chinese and English editions; added links to the original videos; credit changed to Enliva LLC; CC BY 4.0 license.
 - **V1.0** (2026-10-12): First release, Traditional Chinese.
 
@@ -72,7 +73,7 @@ Everything in this repository (handbook, cards, sources) is released under [CC B
 
 Suggested credit:
 
-> *The Sustainable Lean Physique Handbook* V1.1, Enliva LLC, CC BY 4.0, https://github.com/enlivatech/sustainable-lean-physique
+> *The Sustainable Lean Physique Handbook* V1.2, Enliva LLC, CC BY 4.0, https://github.com/enlivatech/sustainable-lean-physique
 
 ## Disclaimer
 
