@@ -1,4 +1,4 @@
-# 可持續薄肌手冊
+# 可持續薄肌手冊：薄肌理論可持續版
 
 好看、好用、練得久的身體——一本照著做就行的訓練與生活指南（繁體中文）。
 
@@ -10,7 +10,7 @@
 
 「薄肌」指的是足夠的肌肉加上適中的體脂：穿衣顯瘦、脫衣有肉，不追求大塊頭。
 
-這份手冊從邵艾倫 Alan 的影片〈[如何練出薄肌？訓練、飲食、減脂一次講透](https://www.youtube.com/watch?v=vQp8G-BHnI8)〉出發。原版抓重點的眼光很準（增肌加減脂、漸進超負荷、抓大放小），但目標偏向短期衝刺。這裡依照運動指南和研究改寫成能長期維持的版本：
+這份手冊從「薄肌理論」的原版，也就是邵艾倫 Alan 的影片〈[如何練出薄肌？訓練、飲食、減脂一次講透](https://www.youtube.com/watch?v=vQp8G-BHnI8)〉出發。原版抓重點的眼光很準（增肌加減脂、漸進超負荷、抓大放小），但目標偏向短期衝刺。這裡依照運動指南和研究改寫成能長期維持的版本：
 
 - 體脂不追極低：男性常態 10–15%，10% 只在短期需要時壓一下。
 - 每個肌群每週練 2 次、約 10 組，主項 6–10 下，每組留 1–3 下。
@@ -50,7 +50,7 @@
 
 ## English
 
-*Bó jī* (薄肌, literally "thin muscle") is the Chinese-internet term for a lean, athletic look: moderate muscle at a low-but-livable body fat, close to what English speakers call a *lean physique* or *swimmer's build*. This repo is a Traditional Chinese handbook that turns a popular short-term version of the idea into a sustainable plan: twice-weekly training per muscle, real cardio, sleep and recovery, flexible eating, and a maintenance phase.
+*Bó jī* (薄肌, literally "thin muscle"; the idea is often called 薄肌理論, "bó jī theory") is the Chinese-internet term for a lean, athletic look: moderate muscle at a low-but-livable body fat, close to what English speakers call a *lean physique* or *swimmer's build*. This repo is a Traditional Chinese handbook that turns a popular short-term version of the idea into a sustainable plan: twice-weekly training per muscle, real cardio, sleep and recovery, flexible eating, and a maintenance phase.
 
 ## 聲明
 
