@@ -1,0 +1,1066 @@
+<!doctype html>
+<html lang="zh-Hans-CN">
+<head>
+<meta charset="utf-8">
+<title>可持续薄肌手册｜薄肌理论可持续版</title>
+<style>
+:root{
+  --ink:#1d1d1b; --ink2:#52514e; --muted:#8a8984; --line:#dcdad3; --soft:#f4f3ef;
+  --blue:#2a78d6; --blue-t:#e3eefb; --blue-m:#8fbbee;
+  --aqua:#1baf7a; --aqua-t:#e0f4ec;
+  --orange:#eb6834; --orange-t:#fdebe3;
+  --yellow:#eda100; --yellow-t:#fdf2d9;
+  --red:#e34948; --red-t:#fbe5e4;
+  --green:#008300; --green-t:#e0f0e0;
+}
+@page{ size:A4; margin:18mm 17mm 19mm;
+  @bottom-center{ content:counter(page); font:8.5pt "Microsoft YaHei",sans-serif; color:#8a8984; }
+  @bottom-right{ content:"可持续薄肌手册 · V1.1"; font:8pt "Microsoft YaHei",sans-serif; color:#b5b3ab; }
+}
+@page cover{ margin:0; @bottom-center{content:none} @bottom-right{content:none} }
+*{ box-sizing:border-box; }
+html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+body{ margin:0; background:#fff; color:var(--ink);
+  font-family:"Microsoft YaHei","PingFang SC","Noto Sans SC",sans-serif; font-size:10.3pt; line-height:1.72; }
+.cover{ page:cover; height:297mm; width:210mm; position:relative; overflow:hidden; background:#f6f5f1; break-after:page; }
+.cover .band{ position:absolute; left:0; right:0; top:0; height:118mm; background:var(--blue); }
+.cover .inner{ position:absolute; left:22mm; right:22mm; top:44mm; color:#fff; }
+.cover .kicker{ font-size:11pt; letter-spacing:.2em; opacity:.85; }
+.cover h1{ font-size:40pt; line-height:1.2; margin:6mm 0 4mm; font-weight:700; letter-spacing:.04em; }
+.cover .sub{ font-size:14pt; opacity:.95; }
+.cover .art{ position:absolute; left:22mm; right:22mm; top:136mm; }
+.cover .foot{ position:absolute; left:22mm; right:22mm; bottom:20mm; color:var(--ink2); font-size:9.5pt; line-height:1.6; border-top:1px solid var(--line); padding-top:4mm; }
+
+.chapter{ break-before:page; }
+.chap-no{ color:var(--blue); font-size:10pt; font-weight:700; letter-spacing:.12em; }
+h1{ font-size:21pt; line-height:1.3; margin:1mm 0 2mm; }
+.lead{ font-size:11.2pt; color:var(--ink2); margin:0 0 6mm; padding-bottom:4mm; border-bottom:2px solid var(--ink); }
+h2{ font-size:13.2pt; margin:7mm 0 2.5mm; padding-left:3mm; border-left:4px solid var(--blue); line-height:1.35; break-after:avoid; }
+h3{ font-size:11pt; margin:4mm 0 1.5mm; break-after:avoid; }
+p{ margin:0 0 2.6mm; }
+ul,ol{ margin:0 0 3mm; padding-left:5.5mm; }
+li{ margin:0 0 1.1mm; }
+li::marker{ color:var(--blue); }
+b,strong{ font-weight:700; }
+.muted{ color:var(--muted); }
+.small{ font-size:9pt; color:var(--ink2); }
+
+table{ width:100%; border-collapse:collapse; margin:2mm 0 4mm; font-size:9.6pt; line-height:1.55; break-inside:avoid; }
+th{ text-align:left; font-weight:700; background:var(--soft); border-bottom:1.5px solid var(--ink); padding:1.8mm 2.2mm; }
+td{ border-bottom:1px solid var(--line); padding:1.8mm 2.2mm; vertical-align:top; }
+td.n,th.n{ text-align:right; white-space:nowrap; }
+.nowrap{ white-space:nowrap; }
+
+figure{ margin:4mm 0 5mm; break-inside:avoid; }
+figure svg{ display:block; width:100%; height:auto; }
+figcaption{ font-size:8.8pt; color:var(--ink2); margin-top:1.5mm; }
+figcaption b{ color:var(--ink); }
+
+.box{ border-radius:3mm; padding:3.2mm 4mm; margin:3mm 0 4mm; break-inside:avoid; }
+.box p:last-child,.box ul:last-child{ margin-bottom:0; }
+.box .t{ font-weight:700; margin-bottom:1mm; }
+.tip{ background:var(--blue-t); }
+.warn{ background:var(--orange-t); }
+.note{ background:var(--soft); }
+
+.grid2{ display:grid; grid-template-columns:1fr 1fr; gap:4mm; }
+.grid3{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:3.5mm; }
+.card{ border:1px solid var(--line); border-radius:3mm; padding:3mm 3.5mm; break-inside:avoid; background:#fff; }
+.card .h{ font-weight:700; font-size:10.6pt; margin-bottom:1mm; }
+.card ul{ padding-left:4.5mm; margin:0; font-size:9.4pt; }
+.card p{ font-size:9.4pt; }
+
+.light{ display:grid; grid-template-columns:repeat(3,1fr); gap:3mm; margin:3mm 0 4mm; break-inside:avoid; }
+.light > div{ border-radius:3mm; padding:3mm 3.5mm; font-size:9.4pt; line-height:1.55; }
+.light .h{ font-weight:700; font-size:10.4pt; margin-bottom:1mm; display:flex; align-items:center; gap:2mm; }
+.dot{ width:3.4mm; height:3.4mm; border-radius:50%; display:inline-block; flex:none; }
+
+.plan{ break-inside:avoid; margin:2mm 0 4mm; }
+.plan table{ margin:0; }
+.plan .ph{ display:flex; justify-content:space-between; align-items:baseline; background:var(--blue); color:#fff; padding:1.6mm 3mm; border-radius:2mm 2mm 0 0; font-weight:700; font-size:10pt; }
+.plan .ph span{ font-weight:400; font-size:8.8pt; opacity:.9; }
+.plan td:first-child{ width:62%; }
+
+.quick{ display:grid; grid-template-columns:1fr 1fr; gap:3.5mm; }
+.quick .card .h{ color:var(--blue); }
+.quick .card{ font-size:9.2pt; line-height:1.55; }
+.quick .card ul{ font-size:9.2pt; }
+.end{ margin-top:6mm; font-size:8.6pt; color:var(--muted); text-align:center; }
+.refs{ margin-top:6mm; font-size:8.8pt; line-height:1.6; color:var(--ink2); break-inside:avoid; }
+.refs .t{ font-weight:700; color:var(--ink); margin-bottom:1mm; }
+.refs a{ color:var(--blue); text-decoration:none; word-break:break-all; }
+.refs ul{ margin:0; padding-left:5mm; }
+.brand{ margin-top:5mm; padding-top:4mm; border-top:1px solid var(--line); text-align:center; font-size:10.5pt; font-weight:700; letter-spacing:.04em; color:var(--ink); }
+</style>
+</head>
+<body>
+
+<!-- ============ 封面 ============ -->
+<section class="cover">
+  <div class="band"></div>
+  <div class="inner">
+    <div class="kicker">薄肌理论 · 可持续版 · V1.1</div>
+    <h1>可持续薄肌手册</h1>
+    <div class="sub">好看、好用、练得久的身体</div>
+  </div>
+  <div class="art">
+    <svg viewBox="0 0 660 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="三根主柱示意">
+      <rect x="40" y="30" width="580" height="46" rx="6" fill="#1d1d1b"/>
+      <text x="330" y="60" text-anchor="middle" font-size="19" fill="#fff" font-weight="700">好看 · 好用 · 练得久</text>
+      <g font-size="17" font-weight="700" text-anchor="middle">
+        <rect x="80" y="86" width="120" height="150" rx="6" fill="#2a78d6"/>
+        <text x="140" y="168" fill="#fff">肌力</text>
+        <rect x="270" y="86" width="120" height="150" rx="6" fill="#1baf7a"/>
+        <text x="330" y="168" fill="#fff">心肺</text>
+        <rect x="460" y="86" width="120" height="150" rx="6" fill="#6b6a65"/>
+        <text x="520" y="168" fill="#fff">恢复</text>
+      </g>
+      <rect x="40" y="246" width="580" height="40" rx="6" fill="#e3e1da"/>
+      <text x="330" y="272" text-anchor="middle" font-size="14" fill="#52514e">爆发力 · 平衡 · 活动度</text>
+    </svg>
+  </div>
+  <div class="foot">
+    V1.1 · 2026 年 10 月 · 以 CC BY 4.0 授权发布，可自由转载、改编，请标明出处。<br>
+    本手册是给一般成年人的健身指南，不取代医疗建议。有疾病、旧伤、怀孕或正在服药，开始前先问医生。
+  </div>
+</section>
+
+<!-- ============ 开始之前 ============ -->
+<section class="chapter">
+  <div class="chap-no">开始之前</div>
+  <h1>怎么用这本手册</h1>
+  <p class="lead">这是“薄肌理论”的可持续版。先看懂目标，再挑一套课表照着练。所有数字都是起点，不是规定；照自己的状况调整。</p>
+
+  <table>
+    <tr><th style="width:28%">你想知道</th><th>看哪里</th></tr>
+    <tr><td>薄肌是什么、体脂要多少</td><td>第 1 章</td></tr>
+    <tr><td>一周要练哪些东西</td><td>第 2 章、第 7 章</td></tr>
+    <tr><td>重量训练怎么练、选哪套课表</td><td>第 3 章、第 4 章</td></tr>
+    <tr><td>有氧要做多少</td><td>第 5 章</td></tr>
+    <tr><td>怎么吃</td><td>第 8 章</td></tr>
+    <tr><td>没进步、很累怎么办</td><td>第 9 章、第 10 章</td></tr>
+    <tr><td>只想看重点</td><td>最后一页“速查卡”</td></tr>
+  </table>
+
+  <h2>开始前先确认</h2>
+  <ul>
+    <li>有心脏病、高血压、糖尿病、关节旧伤、怀孕，或正在长期服药：<b>先问医生</b>，尤其是高强度间歇和跳跃。</li>
+    <li>不确定的话，可以先做 PAR-Q+ 运动前自评问卷（网上可以免费获取）。</li>
+    <li>很久没运动：前 2–4 周全部用轻重量、短时间，让身体先适应。</li>
+  </ul>
+
+  <h2>疼痛红绿灯</h2>
+  <p>练习时分清楚“累”和“痛”。肌肉酸是正常的，关节痛不是。</p>
+  <div class="light">
+    <div style="background:var(--green-t)">
+      <div class="h"><span class="dot" style="background:var(--green)"></span>绿灯：照常练</div>
+      肌肉酸、累、喘；练完隔 1–2 天的肌肉酸痛。
+    </div>
+    <div style="background:var(--yellow-t)">
+      <div class="h"><span class="dot" style="background:var(--yellow)"></span>黄灯：调整</div>
+      关节有点不舒服（10 分里 3 分以下），隔天就消退。<b>减重量、缩小幅度，或换一个不痛的动作。</b>
+    </div>
+    <div style="background:var(--red-t)">
+      <div class="h"><span class="dot" style="background:var(--red)"></span>红灯：停</div>
+      尖锐的痛、越练越痛、隔天更痛、麻或肿。<b>停练这个部位，找医生或物理治疗师。</b>
+    </div>
+  </div>
+
+  <div class="box note">
+    <div class="t">这本手册的原则</div>
+    <ul>
+      <li>能长期做下去，比短期做到最好重要。</li>
+      <li>看趋势，不看单一天的数字。</li>
+      <li>忙的时候做少一点也算数，不要因为做不满就整周放弃。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 第 1 章 ============ -->
+<section class="chapter">
+  <div class="chap-no">第 1 章</div>
+  <h1>目标：薄肌是什么</h1>
+  <p class="lead">薄肌 ＝ 足够的肌肉 ＋ 适中的体脂。我们要的是一副好看、好用、能长期维持的身体，不是某个数字。</p>
+
+  <h2>方法只有两个</h2>
+  <ul>
+    <li><b>重量训练</b>让肌肉长出来。</li>
+    <li><b>控制热量</b>让脂肪降下来。</li>
+  </ul>
+  <p>没有专门练“薄肌”的特殊方法。肌力、心肺和平衡则让这身肌肉反应快、稳、不容易受伤。</p>
+
+  <h2>体脂参考</h2>
+  <figure>
+    <svg viewBox="0 0 680 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="男女体脂外形参考区间">
+      <g font-size="13" fill="#1d1d1b">
+        <!-- scale: x = 60 + (pct-5)*20 -->
+        <text x="0" y="57" font-weight="700">男性</text>
+        <text x="0" y="137" font-weight="700">女性</text>
+      </g>
+      <defs>
+        <pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <rect width="6" height="6" fill="#f1f0ec"/><line x1="0" y1="0" x2="0" y2="6" stroke="#c9c7bf" stroke-width="2"/>
+        </pattern>
+      </defs>
+      <!-- 男 -->
+      <g>
+        <rect x="60"  y="34" width="58"  height="36" rx="3" fill="url(#hatch)"/>
+        <rect x="120" y="34" width="38"  height="36" rx="3" fill="#c7ebdc"/>
+        <rect x="160" y="34" width="98"  height="36" rx="3" fill="#1baf7a"/>
+        <rect x="260" y="34" width="98"  height="36" rx="3" fill="#c7ebdc"/>
+        <rect x="360" y="34" width="300" height="36" rx="3" fill="#e3e1da"/>
+      </g>
+      <g font-size="12" text-anchor="middle" fill="#1d1d1b">
+        <text x="89" y="57" fill="#52514e">不建议</text>
+        <text x="139" y="57">短期</text>
+        <text x="209" y="57" fill="#fff" font-weight="700">常态目标</text>
+        <text x="309" y="57">增肌期可接受</text>
+        <text x="510" y="57">以外形来说，先减脂</text>
+      </g>
+      <!-- 女 -->
+      <g>
+        <rect x="60"  y="114" width="218" height="36" rx="3" fill="url(#hatch)"/>
+        <rect x="280" y="114" width="78"  height="36" rx="3" fill="#c7ebdc"/>
+        <rect x="360" y="114" width="98"  height="36" rx="3" fill="#1baf7a"/>
+        <rect x="460" y="114" width="98"  height="36" rx="3" fill="#c7ebdc"/>
+        <rect x="560" y="114" width="100" height="36" rx="3" fill="#e3e1da"/>
+      </g>
+      <g font-size="12" text-anchor="middle" fill="#1d1d1b">
+        <text x="169" y="137" fill="#52514e">不建议长期维持</text>
+        <text x="319" y="137">短期</text>
+        <text x="409" y="137" fill="#fff" font-weight="700">常态目标</text>
+        <text x="509" y="137">增肌期可接受</text>
+        <text x="610" y="137">先减脂</text>
+      </g>
+      <!-- axis -->
+      <g font-size="11" fill="#8a8984" text-anchor="middle">
+        <line x1="60" y1="170" x2="660" y2="170" stroke="#dcdad3"/>
+        <text x="60" y="188">5%</text><text x="120" y="188">8%</text><text x="160" y="188">10%</text>
+        <text x="260" y="188">15%</text><text x="360" y="188">20%</text><text x="460" y="188">25%</text>
+        <text x="560" y="188">30%</text><text x="660" y="188">35%</text>
+      </g>
+      <g stroke="#dcdad3">
+        <line x1="60" y1="166" x2="60" y2="174"/><line x1="120" y1="166" x2="120" y2="174"/><line x1="160" y1="166" x2="160" y2="174"/>
+        <line x1="260" y1="166" x2="260" y2="174"/><line x1="360" y1="166" x2="360" y2="174"/><line x1="460" y1="166" x2="460" y2="174"/>
+        <line x1="560" y1="166" x2="560" y2="174"/><line x1="660" y1="166" x2="660" y2="174"/>
+      </g>
+      <text x="360" y="206" font-size="11" fill="#8a8984" text-anchor="middle">体脂率</text>
+    </svg>
+    <figcaption><b>图 1　体脂的外形参考。</b>这是外形目标，不是健康分界线；每个人能舒服维持的范围不一样。</figcaption>
+  </figure>
+
+  <ul>
+    <li><b>常态：</b>男性约 10–15%，女性约 20–25%。这个范围多数人吃得饱、练得动、睡得好。</li>
+    <li><b>短期压低：</b>拍照或活动前可以短期降一点，结束后回到常态。这不是必要步骤。</li>
+    <li><b>体脂机不准：</b>体脂秤、体脂机的误差常有好几个百分点。看<b>腰围、照片和长期趋势</b>更可靠。</li>
+  </ul>
+
+  <div class="box tip">
+    <div class="t">一个更简单的健康指标</div>
+    <p><b>腰围小于身高的一半。</b>例如身高 170 厘米，腰围最好在 85 厘米以下。量法：肚脐高度、自然呼气后量。</p>
+  </div>
+
+  <div class="box warn">
+    <div class="t">比体脂数字更重要的信号</div>
+    <p>出现以下情况，通常代表吃得太少或练得太多，男女都适用：</p>
+    <ul>
+      <li>月经变乱或停经、性欲明显下降</li>
+      <li>一直很累、常生病、反复受伤</li>
+      <li>训练表现持续退步</li>
+    </ul>
+    <p>这时先多吃一点、少练一点；持续的话去看医生。</p>
+  </div>
+</section>
+
+<!-- ============ 第 2 章 ============ -->
+<section class="chapter">
+  <div class="chap-no">第 2 章</div>
+  <h1>六件事都要练，但比重不同</h1>
+  <p class="lead">肌力、心肺、恢复是三根主柱，给足时间。爆发力、平衡、活动度用最少的量，塞进热身和课表空档。</p>
+
+  <figure>
+    <svg viewBox="0 0 680 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="六大要素示意">
+      <rect x="20" y="10" width="640" height="44" rx="6" fill="#1d1d1b"/>
+      <text x="340" y="39" text-anchor="middle" font-size="16" fill="#fff" font-weight="700">可持续薄肌：好看、好用、练得久</text>
+      <g text-anchor="middle">
+        <rect x="50" y="66" width="160" height="150" rx="6" fill="#2a78d6"/>
+        <text x="130" y="112" font-size="19" fill="#fff" font-weight="700">肌力</text>
+        <text x="130" y="142" font-size="12.5" fill="#fff">重量训练</text>
+        <text x="130" y="164" font-size="12.5" fill="#fff">每周 3 次</text>
+        <rect x="260" y="66" width="160" height="150" rx="6" fill="#1baf7a"/>
+        <text x="340" y="112" font-size="19" fill="#fff" font-weight="700">心肺</text>
+        <text x="340" y="142" font-size="12.5" fill="#fff">有氧</text>
+        <text x="340" y="164" font-size="12.5" fill="#fff">每周约 150 分钟</text>
+        <rect x="470" y="66" width="160" height="150" rx="6" fill="#6b6a65"/>
+        <text x="550" y="112" font-size="19" fill="#fff" font-weight="700">恢复</text>
+        <text x="550" y="142" font-size="12.5" fill="#fff">睡眠与休息</text>
+        <text x="550" y="164" font-size="12.5" fill="#fff">每晚 7–9 小时</text>
+      </g>
+      <g text-anchor="middle">
+        <rect x="20"  y="228" width="206" height="62" rx="6" fill="#fdebe3"/>
+        <text x="123" y="254" font-size="14" fill="#1d1d1b" font-weight="700">爆发力</text>
+        <text x="123" y="276" font-size="11.5" fill="#52514e">每周 2 次 × 5–10 分钟</text>
+        <rect x="237" y="228" width="206" height="62" rx="6" fill="#fdf2d9"/>
+        <text x="340" y="254" font-size="14" fill="#1d1d1b" font-weight="700">平衡与核心</text>
+        <text x="340" y="276" font-size="11.5" fill="#52514e">放进重量训练</text>
+        <rect x="454" y="228" width="206" height="62" rx="6" fill="#e3eefb"/>
+        <text x="557" y="254" font-size="14" fill="#1d1d1b" font-weight="700">活动度</text>
+        <text x="557" y="276" font-size="11.5" fill="#52514e">每次热身＋拉伸 5–10 分钟</text>
+      </g>
+    </svg>
+    <figcaption><b>图 2　三根主柱和三项小剂量。</b>主柱撑起身体，小剂量让它更稳、更灵活。</figcaption>
+  </figure>
+
+  <table>
+    <tr><th style="width:17%">要素</th><th style="width:33%">为什么要练</th><th style="width:27%">怎么练</th><th>每周最少</th></tr>
+    <tr><td><b>肌力</b></td><td>外形、代谢、老了还能自己走动</td><td>复合动作，慢慢加重</td><td>3 次</td></tr>
+    <tr><td><b>心肺</b></td><td>心血管健康、恢复快、活得久</td><td>中等强度为主，少量高强度</td><td>150 分钟中等强度，或 75 分钟高强度</td></tr>
+    <tr><td><b>恢复</b></td><td>让其他五项真正有效</td><td>睡眠、减量周、管理压力</td><td>每晚 7–9 小时</td></tr>
+    <tr><td><b>爆发力</b></td><td>反应快；40 岁后退化最快</td><td>跳、抛、短冲刺</td><td>2 次 × 5–10 分钟</td></tr>
+    <tr><td><b>平衡与核心</b></td><td>单腿稳定，少扭伤、少跌倒、少腰痛</td><td>单腿动作、抗旋转</td><td>放进重量训练</td></tr>
+    <tr><td><b>活动度</b></td><td>动作做得标准、关节舒服</td><td>动态热身、练后拉伸</td><td>每次 5–10 分钟</td></tr>
+  </table>
+  <p class="small">柔韧性够用就好，能把动作做标准即可。多拉筋并不能明显预防受伤，不必花大量时间。</p>
+</section>
+
+<!-- ============ 第 3 章 ============ -->
+<section class="chapter">
+  <div class="chap-no">第 3 章</div>
+  <h1>重量训练：五个原则</h1>
+  <p class="lead">记住这五条，换哪套课表都通用。</p>
+
+  <table>
+    <tr><th style="width:6%">#</th><th style="width:40%">原则</th><th>说明</th></tr>
+    <tr><td>1</td><td><b>每个肌群每周练 2 次</b></td><td>比一周只练一次更有效，漏练一天也不会整周落空。</td></tr>
+    <tr><td>2</td><td><b>每个肌群每周约 10 组</b></td><td>新手 6–8 组就有效。热身组不算。</td></tr>
+    <tr><td>3</td><td><b>每组做到“还能再做 1–3 下”</b></td><td>太轻不算数，每组都做到力竭又太累。见图 3。</td></tr>
+    <tr><td>4</td><td><b>主项 6–10 下，辅助 8–15 下</b></td><td>主项是深蹲、硬拉、卧推、划船这类大动作；辅助动作是侧平举、弯举这类小动作。</td></tr>
+    <tr><td>5</td><td><b>用“双重渐进法”慢慢加</b></td><td>先加次数，再加重量。见图 4。</td></tr>
+  </table>
+
+  <figure>
+    <svg viewBox="0 0 680 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="还能做几下的判断">
+      <text x="0" y="18" font-size="13" fill="#1d1d1b" font-weight="700">做完一组，问自己：“还能再做几下？”</text>
+      <g text-anchor="middle">
+        <rect x="0"   y="34" width="104" height="56" rx="4" fill="#e3e1da"/>
+        <text x="52" y="60" font-size="20" font-weight="700" fill="#1d1d1b">0</text>
+        <text x="52" y="80" font-size="11" fill="#52514e">做不动了</text>
+        <rect x="110" y="34" width="104" height="56" rx="4" fill="#2a78d6"/>
+        <text x="162" y="60" font-size="20" font-weight="700" fill="#fff">1</text>
+        <rect x="220" y="34" width="104" height="56" rx="4" fill="#2a78d6"/>
+        <text x="272" y="60" font-size="20" font-weight="700" fill="#fff">2</text>
+        <rect x="330" y="34" width="104" height="56" rx="4" fill="#2a78d6"/>
+        <text x="382" y="60" font-size="20" font-weight="700" fill="#fff">3</text>
+        <text x="272" y="80" font-size="11" fill="#fff">目标区</text>
+        <rect x="440" y="34" width="104" height="56" rx="4" fill="#e3eefb"/>
+        <text x="492" y="60" font-size="20" font-weight="700" fill="#1d1d1b">4</text>
+        <rect x="550" y="34" width="130" height="56" rx="4" fill="#e3eefb"/>
+        <text x="615" y="60" font-size="20" font-weight="700" fill="#1d1d1b">5+</text>
+        <text x="615" y="80" font-size="11" fill="#52514e">太轻</text>
+      </g>
+      <g font-size="11.5" fill="#52514e" text-anchor="middle">
+        <text x="52" y="112">偶尔用在辅助动作</text>
+        <text x="272" y="112" fill="#1d1d1b" font-weight="700">大部分的组都落在这里</text>
+        <text x="560" y="112">太轻，不算有效组</text>
+      </g>
+      <text x="0" y="140" font-size="11" fill="#8a8984">深蹲、硬拉这类大动作不要做到 0。新手很难估准，先保守一点（留 2–3 下），练几周就会越来越准。</text>
+    </svg>
+    <figcaption><b>图 3　每组的用力程度。</b>大部分的组停在“还能再做 1–3 下”。</figcaption>
+  </figure>
+
+  <h2>双重渐进法</h2>
+  <p>每个动作设一个次数范围，例如 8–10 下。</p>
+  <ol>
+    <li>重量不变，每次训练想办法多做一两下。</li>
+    <li>所有组都做到上限（10 下）后，下次加重量，次数回到下限（8 下）重新开始。</li>
+    <li>每次加多少：上肢 1–2.5 公斤，下肢 2.5–5 公斤。侧平举、弯举这类小动作加不上重量很正常，多加次数就好。</li>
+  </ol>
+
+  <figure>
+    <svg id="dp" viewBox="0 0 680 262" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="双重渐进法示例"></svg>
+    <figcaption><b>图 4　双重渐进法示例（卧推，8–10 下，3 组）。</b>次数一路往上加，三组都做到 10 下就加重量，次数回到 8 下再往上爬。</figcaption>
+  </figure>
+
+  <h2>每次训练的流程</h2>
+  <ol>
+    <li><b>动态热身 5–10 分钟</b>（第 6 章）。</li>
+    <li><b>爆发力 5–10 分钟</b>（有安排的那天）。</li>
+    <li><b>主项：</b>先做 2–3 组由轻到重的热身组，再做正式组。组间休息 2–3 分钟。</li>
+    <li><b>辅助动作：</b>组间休息 1–2 分钟；可以两个动作轮流做（超级组）来省时间。</li>
+    <li><b>练后拉伸 5 分钟</b>，记录这次的重量和次数。</li>
+  </ol>
+
+  <h2>遇到瓶颈怎么办</h2>
+  <figure>
+    <svg viewBox="0 0 680 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="瓶颈处理流程">
+      <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8a8984"/></marker></defs>
+      <g font-size="12.5" fill="#1d1d1b" text-anchor="middle">
+        <rect x="0" y="10" width="150" height="70" rx="6" fill="#f4f3ef" stroke="#dcdad3"/>
+        <text x="75" y="40" font-weight="700">同一个动作</text>
+        <text x="75" y="60">连续 3 次没进步</text>
+        <rect x="176" y="10" width="150" height="70" rx="6" fill="#e3eefb"/>
+        <text x="251" y="34" font-weight="700">先查生活</text>
+        <text x="251" y="54">睡够了吗？</text>
+        <text x="251" y="71">吃够了吗？</text>
+        <rect x="352" y="10" width="150" height="70" rx="6" fill="#e3eefb"/>
+        <text x="427" y="34" font-weight="700">再查练法</text>
+        <text x="427" y="54">动作、休息时间</text>
+        <text x="427" y="71">每次都一样吗？</text>
+        <rect x="528" y="10" width="152" height="70" rx="6" fill="#2a78d6"/>
+        <text x="604" y="34" font-weight="700" fill="#fff">还是卡住</text>
+        <text x="604" y="54" fill="#fff">换次数范围</text>
+        <text x="604" y="71" fill="#fff">或换相近动作</text>
+      </g>
+      <g stroke="#8a8984" stroke-width="1.6" marker-end="url(#ar)">
+        <line x1="152" y1="45" x2="173" y2="45"/><line x1="328" y1="45" x2="349" y2="45"/><line x1="504" y1="45" x2="525" y2="45"/>
+      </g>
+      <g font-size="11.5" fill="#52514e">
+        <text x="528" y="100">例：8–10 下改成 10–12 下；</text>
+        <text x="528" y="117">杠铃卧推改成哑铃卧推</text>
+      </g>
+      <rect x="0" y="140" width="680" height="84" rx="6" fill="#fdf2d9"/>
+      <g font-size="12.5" fill="#1d1d1b">
+        <text x="16" y="166" font-weight="700">两个例外</text>
+        <text x="16" y="188">・减脂期：力量能维持住就算成功，不用每次都进步。</text>
+        <text x="16" y="208">・别太快换动作：换得太频繁，反而看不出自己有没有进步。</text>
+      </g>
+    </svg>
+    <figcaption><b>图 5　瓶颈的处理顺序。</b>大部分瓶颈是睡眠或饮食的问题，不是课表的问题。</figcaption>
+  </figure>
+
+  <h2>减量周</h2>
+  <p>大约每 6–8 周安排一次，或在明显疲劳、关节酸、连续停滞时提前安排：<b>组数减半，重量不变或略降</b>，维持一周再恢复。</p>
+</section>
+
+<!-- ============ 第 4 章 ============ -->
+<section class="chapter">
+  <div class="chap-no">第 4 章</div>
+  <h1>选一套课表</h1>
+  <p class="lead">大多数人每周练三次就够，重点是每个肌群练到两次、每周约 10 组，而且能长期做下去。</p>
+
+  <figure>
+    <div class="grid3">
+      <div class="card" style="border-top:4px solid #8fbbee">
+        <div class="h">A　新手全身</div>
+        <p style="margin:0 0 1.5mm">每周 3 次 · 每次 45–60 分钟</p>
+        <ul><li>练不到半年</li><li>还不会深蹲、硬拉</li><li>先练 8–12 周</li></ul>
+      </div>
+      <div class="card" style="border-top:4px solid #2a78d6">
+        <div class="h">B　标准三练（主力）</div>
+        <p style="margin:0 0 1.5mm">每周 3 次 · 每次 60–75 分钟</p>
+        <ul><li>动作已经熟练</li><li>大多数人练好几年都够</li><li>本手册的周课表用这套</li></ul>
+      </div>
+      <div class="card" style="border-top:4px solid #1d1d1b">
+        <div class="h">C　进阶四练</div>
+        <p style="margin:0 0 1.5mm">每周 4 次 · 每次 60–75 分钟</p>
+        <ul><li>认真练 1–2 年以上</li><li>饮食睡眠都做到，仍卡 2 个月</li><li>每周真的有 4 天空</li></ul>
+      </div>
+    </div>
+    <figcaption><b>图 6　三套课表怎么选。</b>由左往右升级；忙的时候可以退回去。</figcaption>
+  </figure>
+
+  <h2>A　新手全身（第 1–12 周）</h2>
+  <p>A、B 两天轮流，每周 3 次：第一周 A-B-A，第二周 B-A-B。重量选“做完还能再做 3 下”的轻重量，专心把动作练标准。</p>
+  <div class="grid2">
+    <div class="plan">
+      <div class="ph">A 日 <span>约 13 组</span></div>
+      <table>
+        <tr><td>高脚杯深蹲</td><td class="n">3 × 8–12</td></tr>
+        <tr><td>哑铃卧推</td><td class="n">3 × 8–12</td></tr>
+        <tr><td>高位下拉</td><td class="n">3 × 8–12</td></tr>
+        <tr><td>哑铃罗马尼亚硬拉</td><td class="n">2 × 8–12</td></tr>
+        <tr><td>平板支撑</td><td class="n">2 × 20–40 秒</td></tr>
+      </table>
+    </div>
+    <div class="plan">
+      <div class="ph">B 日 <span>约 13 组</span></div>
+      <table>
+        <tr><td>腿举或分腿蹲</td><td class="n">3 × 8–12</td></tr>
+        <tr><td>坐姿划船</td><td class="n">3 × 8–12</td></tr>
+        <tr><td>哑铃肩推</td><td class="n">3 × 8–12</td></tr>
+        <tr><td>臀推</td><td class="n">2 × 10–15</td></tr>
+        <tr><td>死虫式</td><td class="n">2 × 每边 8</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <h2>B　标准三练：下肢 ／ 上肢 ／ 全身</h2>
+  <p>周一、周三、周五（或任何不连续的三天）。主项 6–10 下，辅助 8–15 下。</p>
+
+  <div class="plan">
+    <div class="ph">周一　下肢 <span>15 组 · 约 70 分钟（含跳箱）</span></div>
+    <table>
+      <tr><td>深蹲</td><td class="n">4 × 6–10</td></tr>
+      <tr><td>罗马尼亚硬拉</td><td class="n">3 × 6–10</td></tr>
+      <tr><td>保加利亚分腿蹲（兼练平衡）</td><td class="n">3 × 每边 8–12</td></tr>
+      <tr><td>腿弯举</td><td class="n">3 × 10–15</td></tr>
+      <tr><td>Pallof 推（抗旋转核心）</td><td class="n">2 × 每边 10</td></tr>
+    </table>
+  </div>
+  <div class="plan">
+    <div class="ph">周三　上肢 <span>23 组 · 约 75 分钟（含药球）</span></div>
+    <table>
+      <tr><td>卧推</td><td class="n">4 × 6–10</td></tr>
+      <tr><td>引体向上（做不到 6 下就用高位下拉）</td><td class="n">4 × 6–10</td></tr>
+      <tr><td>站姿肩推</td><td class="n">3 × 6–10</td></tr>
+      <tr><td>俯身划船</td><td class="n">3 × 8–12</td></tr>
+      <tr><td>双杠臂屈伸（做不到就用窄距俯卧撑）</td><td class="n">3 × 8–12</td></tr>
+      <tr><td>侧平举 ＋ 二头弯举（超级组）</td><td class="n">各 3 × 10–15</td></tr>
+    </table>
+  </div>
+  <div class="plan">
+    <div class="ph">周五　全身 <span>20 组 · 约 70 分钟</span></div>
+    <table>
+      <tr><td>上斜哑铃卧推</td><td class="n">3 × 8–12</td></tr>
+      <tr><td>前蹲或腿举</td><td class="n">3 × 8–12</td></tr>
+      <tr><td>臀推</td><td class="n">3 × 8–12</td></tr>
+      <tr><td>单臂哑铃划船</td><td class="n">3 × 8–12</td></tr>
+      <tr><td>单腿罗马尼亚硬拉（兼练平衡）</td><td class="n">2 × 每边 8–10</td></tr>
+      <tr><td>面拉 ＋ 侧平举（超级组）</td><td class="n">各 3 × 12–15</td></tr>
+    </table>
+  </div>
+
+  <figure>
+    <svg viewBox="0 0 680 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="标准三练每周组数">
+      <!-- x = 150 + sets*28 ; 10 -> 430, 15 -> 570 -->
+      <rect x="430" y="8" width="140" height="196" fill="#e0f4ec"/>
+      <text x="500" y="222" font-size="11" fill="#1d1d1b" text-anchor="middle" font-weight="700">建议范围 10–15 组</text>
+      <g font-size="12.5" fill="#1d1d1b" text-anchor="end">
+        <text x="140" y="34">股四头（大腿前侧）</text>
+        <text x="140" y="66">臀部与腿后侧</text>
+        <text x="140" y="98">胸</text>
+        <text x="140" y="130">背</text>
+        <text x="140" y="162">肩</text>
+        <text x="140" y="194">手臂</text>
+      </g>
+      <g fill="#2a78d6">
+        <path d="M150 20 h276 a4 4 0 0 1 4 4 v12 a4 4 0 0 1 -4 4 h-276 z"/>
+        <path d="M150 52 h304 a4 4 0 0 1 4 4 v12 a4 4 0 0 1 -4 4 h-304 z"/>
+        <path d="M150 84 h276 a4 4 0 0 1 4 4 v12 a4 4 0 0 1 -4 4 h-276 z"/>
+        <path d="M150 116 h276 a4 4 0 0 1 4 4 v12 a4 4 0 0 1 -4 4 h-276 z"/>
+        <path d="M150 148 h332 a4 4 0 0 1 4 4 v12 a4 4 0 0 1 -4 4 h-332 z"/>
+        <path d="M150 180 h164 a4 4 0 0 1 4 4 v12 a4 4 0 0 1 -4 4 h-164 z"/>
+      </g>
+      <g font-size="12" fill="#1d1d1b">
+        <text x="436" y="35">10</text>
+        <text x="464" y="67">11</text>
+        <text x="436" y="99">10</text>
+        <text x="436" y="131">10</text>
+        <text x="492" y="163">12</text>
+        <text x="324" y="195">6　＋推、拉时间接练到</text>
+      </g>
+      <line x1="150" y1="8" x2="150" y2="204" stroke="#1d1d1b" stroke-width="1"/>
+      <g font-size="10.5" fill="#8a8984" text-anchor="middle">
+        <text x="150" y="240">0</text><text x="290" y="240">5</text><text x="430" y="240">10</text><text x="570" y="240">15</text>
+      </g>
+    </svg>
+    <figcaption><b>图 7　标准三练每周的直接组数。</b>每个主要肌群都练到两天、约 10 组。胸想多练，周五加 2 组飞鸟即可。</figcaption>
+  </figure>
+
+  <h2>C　进阶四练：上肢 ／ 下肢 × 2</h2>
+  <p>周一上肢 A、周二下肢 A、周四上肢 B、周五下肢 B。每个肌群每周约 12–16 组。改成四练后，有氧移到休息日，或接在重量训练后面做。</p>
+  <div class="grid2">
+    <div class="plan">
+      <div class="ph">上肢 A</div>
+      <table>
+        <tr><td>卧推</td><td class="n">4 × 6–10</td></tr>
+        <tr><td>引体向上</td><td class="n">4 × 6–10</td></tr>
+        <tr><td>站姿肩推</td><td class="n">3 × 6–10</td></tr>
+        <tr><td>俯身划船</td><td class="n">3 × 8–12</td></tr>
+        <tr><td>侧平举 ＋ 弯举</td><td class="n">各 3 × 10–15</td></tr>
+      </table>
+    </div>
+    <div class="plan">
+      <div class="ph">下肢 A</div>
+      <table>
+        <tr><td>深蹲</td><td class="n">4 × 6–10</td></tr>
+        <tr><td>罗马尼亚硬拉</td><td class="n">3 × 6–10</td></tr>
+        <tr><td>腿弯举</td><td class="n">3 × 10–15</td></tr>
+        <tr><td>提踵</td><td class="n">3 × 10–15</td></tr>
+        <tr><td>悬垂举腿</td><td class="n">3 × 8–12</td></tr>
+      </table>
+    </div>
+    <div class="plan">
+      <div class="ph">上肢 B</div>
+      <table>
+        <tr><td>上斜哑铃卧推</td><td class="n">3 × 8–12</td></tr>
+        <tr><td>高位下拉</td><td class="n">3 × 8–12</td></tr>
+        <tr><td>单臂哑铃划船</td><td class="n">3 × 8–12</td></tr>
+        <tr><td>双杠臂屈伸</td><td class="n">3 × 8–12</td></tr>
+        <tr><td>面拉 ＋ 侧平举</td><td class="n">各 3 × 12–15</td></tr>
+        <tr><td>三头臂屈伸</td><td class="n">3 × 10–15</td></tr>
+      </table>
+    </div>
+    <div class="plan">
+      <div class="ph">下肢 B</div>
+      <table>
+        <tr><td>硬拉或腿举</td><td class="n">3 × 6–10</td></tr>
+        <tr><td>保加利亚分腿蹲</td><td class="n">3 × 每边 8–12</td></tr>
+        <tr><td>臀推</td><td class="n">3 × 8–12</td></tr>
+        <tr><td>单腿罗马尼亚硬拉</td><td class="n">2 × 每边 8–10</td></tr>
+        <tr><td>Pallof 推</td><td class="n">2 × 每边 10</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <h2>没有器材时</h2>
+  <table>
+    <tr><th style="width:24%">部位</th><th>动作</th></tr>
+    <tr><td>推</td><td>俯卧撑 → 脚垫高俯卧撑 → 窄距俯卧撑</td></tr>
+    <tr><td>拉</td><td>引体向上；没有单杠就用桌下反向划船、弹力带划船</td></tr>
+    <tr><td>腿</td><td>背包深蹲、分腿蹲、登阶、单腿臀桥</td></tr>
+    <tr><td>怎么加难度</td><td>先加次数 → 下放放慢到 3 秒 → 背包加重 → 换更难的变化</td></tr>
+  </table>
+</section>
+
+<!-- ============ 第 5 章 ============ -->
+<section class="chapter">
+  <div class="chap-no">第 5 章</div>
+  <h1>有氧与心肺</h1>
+  <p class="lead">每周约 150 分钟中等强度，或 75 分钟高强度，或两者混搭。照强度算，不照活动名称算。</p>
+
+  <h2>用“能不能说话”判断强度</h2>
+  <figure>
+    <svg viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="说话测试判断运动强度">
+      <rect x="0"   y="10" width="222" height="120" rx="6" fill="#e3eefb"/>
+      <rect x="229" y="10" width="222" height="120" rx="6" fill="#8fbbee"/>
+      <rect x="458" y="10" width="222" height="120" rx="6" fill="#2a78d6"/>
+      <g font-size="16" font-weight="700" text-anchor="middle">
+        <text x="111" y="40" fill="#1d1d1b">轻松</text>
+        <text x="340" y="40" fill="#1d1d1b">中等强度</text>
+        <text x="569" y="40" fill="#fff">高强度</text>
+      </g>
+      <g font-size="12.5" text-anchor="middle">
+        <text x="111" y="68" fill="#1d1d1b">可以唱歌</text>
+        <text x="111" y="90" fill="#52514e">散步、逛街</text>
+        <text x="111" y="112" fill="#52514e">不计入有氧量</text>
+        <text x="340" y="68" fill="#1d1d1b">能说完整句子，唱不了歌</text>
+        <text x="340" y="90" fill="#1d1d1b">快走、爬坡走、骑车、慢跑</text>
+        <text x="340" y="112" fill="#1d1d1b">1 分钟算 1 分钟</text>
+        <text x="569" y="68" fill="#fff">只能说几个字</text>
+        <text x="569" y="90" fill="#fff">间歇、快跑、爬坡冲刺</text>
+        <text x="569" y="112" fill="#fff" font-weight="700">1 分钟算 2 分钟</text>
+      </g>
+      <defs><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#52514e"/></marker></defs>
+      <line x1="10" y1="152" x2="670" y2="152" stroke="#52514e" stroke-width="1.5" marker-end="url(#ar2)"/>
+      <text x="10" y="178" font-size="11.5" fill="#52514e">越来越喘</text>
+      <text x="340" y="178" font-size="11.5" fill="#52514e" text-anchor="middle">常说的“二区”大约落在中等强度的前半段</text>
+    </svg>
+    <figcaption><b>图 8　说话测试。</b>不用心率表也能判断；有心率表的话，中等强度大约是最大心率的 64–76%，但每个人差异很大。</figcaption>
+  </figure>
+
+  <h2>建议的配法</h2>
+  <ul>
+    <li><b>中等强度：</b>每周 2–3 次，每次 30–60 分钟。</li>
+    <li><b>高强度：</b>每周 1 次。例如 4 组“4 分钟用力、3 分钟轻松”，共约 30 分钟。</li>
+    <li><b>日常步数：</b>每天 7,000–10,000 步照常走。速度快到“唱不了歌”的快走，可以算进有氧量。</li>
+    <li><b>心肺底子差：</b>先用爬坡快走；走得太轻松、心率拉不上来，再换成慢跑。</li>
+  </ul>
+
+  <table>
+    <tr><th style="width:18%">方式</th><th style="width:40%">优点</th><th>注意</th></tr>
+    <tr><td>爬坡快走</td><td>冲击最小，最容易达到中等强度</td><td>体能好的人可能心率拉不上来</td></tr>
+    <tr><td>骑车</td><td>冲击小，最不影响腿部训练</td><td>对骨骼刺激少</td></tr>
+    <tr><td>慢跑</td><td>效率高，有助骨密度</td><td>着地冲击约体重 2–3 倍；练腿隔天先避开较好</td></tr>
+    <tr><td>游泳</td><td>几乎零冲击</td><td>对骨骼刺激最少</td></tr>
+    <tr><td>球类、爬山</td><td>好玩，容易持续</td><td>强度忽高忽低，大概估就好</td></tr>
+  </table>
+
+  <div class="box tip">
+    <div class="t">有氧会不会影响长肌肉？</div>
+    <p>合理的量不太会。想优先长肌肉的话：同一天先做重量训练、再做有氧；能分开几个小时更好，但不是硬性规定。跑步比骑车更容易影响腿部训练。</p>
+  </div>
+</section>
+
+<!-- ============ 第 6 章 ============ -->
+<section class="chapter">
+  <div class="chap-no">第 6 章</div>
+  <h1>爆发力、活动度、平衡</h1>
+  <p class="lead">这三项不需要另外排时间，每次花 5–10 分钟，放进热身或重量训练里。</p>
+
+  <h2>爆发力：每周 2 次，每次 5–10 分钟，放在热身之后</h2>
+  <table>
+    <tr><th style="width:18%">部位</th><th style="width:44%">动作</th><th>组数</th></tr>
+    <tr><td>下肢</td><td>跳箱、立定跳远</td><td>3 组 × 3–5 下</td></tr>
+    <tr><td>上肢</td><td>药球胸前推抛、过顶砸球</td><td>3 组 × 5 下</td></tr>
+    <tr><td>全身</td><td>壶铃摆荡；或 20–30 米短冲刺</td><td>3 组 × 10 下；冲刺 4–6 趟</td></tr>
+  </table>
+  <ul>
+    <li><b>每一下都全力、干净，累了就停。</b>这不是有氧，不要做到喘。</li>
+    <li><b>先学落地：</b>膝盖对准脚尖、轻声落地。体重较重或膝盖不舒服，先用药球抛掷代替跳跃。</li>
+    <li><b>冲刺：</b>先用七八成速度跑，几周后再慢慢加快；腿后侧拉伤过的人，先用动感单车冲刺代替。</li>
+  </ul>
+
+  <h2>活动度：练前动、练后拉</h2>
+  <ul>
+    <li><b>练前动态热身（各 30–60 秒）：</b>髋关节绕圈、世界最伟大拉伸、胸椎旋转、弹力带绕肩。练前不要长时间静态拉伸，会暂时降低力量。</li>
+    <li><b>练后静态拉伸（各 30–60 秒）：</b>练到的部位各拉一下，不痛为原则。久坐的人每天挑两个：髋屈肌、胸、胸椎、脚踝。</li>
+  </ul>
+
+  <h2>平衡与核心：放进重量训练</h2>
+  <ul>
+    <li><b>单腿动作每周至少 2 个：</b>保加利亚分腿蹲、单腿罗马尼亚硬拉、登阶。</li>
+    <li><b>核心每次挑 1 个、做 2–3 组：</b>Pallof 推、单手农夫行走、平板支撑、死虫式。这些练的是“稳住身体”，比卷腹更能保护腰。</li>
+    <li><b>生活里顺便练：</b>刷牙时单腿站 30 秒，熟练后闭眼。</li>
+  </ul>
+
+  <h2>自我检查（每 6–8 周做一次）</h2>
+  <table>
+    <tr><th style="width:36%">测验</th><th style="width:32%">合格标准</th><th>做不到时</th></tr>
+    <tr><td>脚跟不离地，蹲到大腿低于水平</td><td>能稳稳蹲下、站起</td><td>加强脚踝、髋关节活动度</td></tr>
+    <tr><td>双手伸直举过头</td><td>手臂贴近耳朵，腰不拱</td><td>加强胸椎旋转、绕肩</td></tr>
+    <tr><td>单腿站</td><td>睁眼轻松撑 30 秒；闭眼约 10 秒（40 岁以下）</td><td>多做单腿动作和单腿站</td></tr>
+    <tr><td>立定跳远</td><td>和自己比，维持或进步</td><td>保持每周 2 次爆发力练习</td></tr>
+  </table>
+</section>
+
+<!-- ============ 第 7 章 ============ -->
+<section class="chapter">
+  <div class="chap-no">第 7 章</div>
+  <h1>一周怎么排</h1>
+  <p class="lead">每周约 5–6 小时，就能把六件事都练到。下面是标准三练的范例，顺序可以照自己的行程换。</p>
+
+  <figure>
+    <svg viewBox="0 0 680 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="每周课表范例">
+      <g font-size="13" font-weight="700" fill="#1d1d1b" text-anchor="middle">
+        <text x="47" y="20">周一</text><text x="144" y="20">周二</text><text x="241" y="20">周三</text>
+        <text x="338" y="20">周四</text><text x="435" y="20">周五</text><text x="532" y="20">周六</text><text x="629" y="20">周日</text>
+      </g>
+      <!-- column x: 0,97,194,291,388,485,582 width 92 -->
+      <g>
+        <rect x="0"   y="32" width="92" height="196" rx="5" fill="#e3eefb"/><rect x="0" y="32" width="5" height="196" fill="#2a78d6"/>
+        <rect x="97"  y="32" width="92" height="196" rx="5" fill="#e0f4ec"/><rect x="97" y="32" width="5" height="196" fill="#1baf7a"/>
+        <rect x="194" y="32" width="92" height="196" rx="5" fill="#e3eefb"/><rect x="194" y="32" width="5" height="196" fill="#2a78d6"/>
+        <rect x="291" y="32" width="92" height="196" rx="5" fill="#fdebe3"/><rect x="291" y="32" width="5" height="196" fill="#eb6834"/>
+        <rect x="388" y="32" width="92" height="196" rx="5" fill="#e3eefb"/><rect x="388" y="32" width="5" height="196" fill="#2a78d6"/>
+        <rect x="485" y="32" width="92" height="196" rx="5" fill="#e0f4ec"/><rect x="485" y="32" width="5" height="196" fill="#1baf7a"/>
+        <rect x="582" y="32" width="92" height="196" rx="5" fill="#f1f0ec"/><rect x="582" y="32" width="5" height="196" fill="#b5b3ab"/>
+      </g>
+      <g font-size="13.5" font-weight="700" fill="#1d1d1b">
+        <text x="13" y="60">下肢</text><text x="110" y="60">中等有氧</text><text x="207" y="60">上肢</text>
+        <text x="304" y="60">高强度</text><text x="401" y="60">全身</text><text x="498" y="60">中等有氧</text><text x="595" y="60">休息</text>
+      </g>
+      <g font-size="11.5" fill="#52514e">
+        <text x="13" y="84">重量训练</text><text x="13" y="104">＋跳箱</text><text x="13" y="124">＋分腿蹲</text>
+        <text x="110" y="84">骑车或</text><text x="110" y="104">爬坡快走</text><text x="110" y="124">＋拉伸</text>
+        <text x="207" y="84">重量训练</text><text x="207" y="104">＋药球抛</text>
+        <text x="304" y="84">4 × 4 分钟</text><text x="304" y="104">间歇</text><text x="304" y="124">＋活动度</text>
+        <text x="401" y="84">重量训练</text><text x="401" y="104">＋单腿硬拉</text>
+        <text x="498" y="84">或爬山、</text><text x="498" y="104">球类</text>
+        <text x="595" y="84">散步</text>
+      </g>
+      <g font-size="14" font-weight="700" fill="#1d1d1b">
+        <text x="13" y="214">70 分</text><text x="110" y="214">45–60 分</text><text x="207" y="214">75 分</text>
+        <text x="304" y="214">30 分</text><text x="401" y="214">70 分</text><text x="498" y="214">60 分</text><text x="595" y="214">—</text>
+      </g>
+      <!-- legend -->
+      <g font-size="11.5" fill="#1d1d1b">
+        <rect x="0" y="250" width="12" height="12" rx="2" fill="#2a78d6"/><text x="18" y="261">重量训练</text>
+        <rect x="100" y="250" width="12" height="12" rx="2" fill="#1baf7a"/><text x="118" y="261">中等强度有氧</text>
+        <rect x="224" y="250" width="12" height="12" rx="2" fill="#eb6834"/><text x="242" y="261">高强度有氧</text>
+        <rect x="336" y="250" width="12" height="12" rx="2" fill="#b5b3ab"/><text x="354" y="261">休息</text>
+      </g>
+      <rect x="0" y="278" width="674" height="48" rx="5" fill="#f4f3ef"/>
+      <text x="14" y="300" font-size="11.5" fill="#1d1d1b">有氧合计：中等约 105–120 分钟 ＋ 高强度 16 分钟 × 2 ≈ 140–150 分钟。</text>
+      <text x="14" y="318" font-size="11.5" fill="#1d1d1b">平日再加几段快走，就轻松超过 150 分钟。每天另外走 7,000–10,000 步。</text>
+    </svg>
+    <figcaption><b>图 9　每周课表范例。</b>重量训练之间隔一天；高强度有氧不排在练腿隔天。</figcaption>
+  </figure>
+
+  <h2>排课的几个参考</h2>
+  <ul>
+    <li>同一个肌群，通常隔 48 小时左右再练。只要下次表现没退步，间隔短一点也没关系。</li>
+    <li>跑步、高强度间歇尽量不排在练腿隔天；骑车、快走比较没影响。</li>
+    <li>高强度训练最好在睡前 1–2 小时结束。</li>
+    <li>行程打乱了就顺延，不用硬补。</li>
+  </ul>
+
+  <div class="box tip">
+    <div class="t">忙碌周的最低版本</div>
+    <p>2–3 次全身重量训练（每次 40 分钟，只做主项）＋ 1–2 次 30 分钟有氧。<b>维持住就是成功。</b></p>
+  </div>
+</section>
+
+<!-- ============ 第 8 章 ============ -->
+<section class="chapter">
+  <div class="chap-no">第 8 章</div>
+  <h1>饮食</h1>
+  <p class="lead">吃够蛋白质，热量配合目标，八成吃天然食物、两成保留弹性。</p>
+
+  <figure>
+    <svg viewBox="0 0 680 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="每餐餐盘比例">
+      <!-- plate center 140,135 r 115 -->
+      <circle cx="140" cy="135" r="124" fill="#f4f3ef" stroke="#dcdad3" stroke-width="2"/>
+      <path d="M140 135 L140 20 A115 115 0 0 0 140 250 Z" fill="#1baf7a"/>
+      <path d="M142 135 L142 20 A115 115 0 0 1 257 135 Z" fill="#eb6834"/>
+      <path d="M142 137 L257 137 A115 115 0 0 1 142 250 Z" fill="#eda100"/>
+      <g font-size="15" font-weight="700" fill="#fff" text-anchor="middle">
+        <text x="88" y="140">蔬菜</text>
+        <text x="196" y="96">蛋白质</text>
+      </g>
+      <text x="196" y="186" font-size="15" font-weight="700" fill="#1d1d1b" text-anchor="middle">主食</text>
+      <!-- explanations -->
+      <g font-size="13" fill="#1d1d1b">
+        <rect x="300" y="22" width="14" height="14" rx="3" fill="#1baf7a"/>
+        <text x="322" y="34" font-weight="700">蔬菜：半个盘子</text>
+        <text x="322" y="54" fill="#52514e">至少两个拳头大，颜色越多越好</text>
+        <rect x="300" y="82" width="14" height="14" rx="3" fill="#eb6834"/>
+        <text x="322" y="94" font-weight="700">蛋白质：四分之一（一个手掌大小）</text>
+        <text x="322" y="114" fill="#52514e">肉、鱼、蛋、豆腐、酸奶；约 25–40 克蛋白质</text>
+        <rect x="300" y="142" width="14" height="14" rx="3" fill="#eda100"/>
+        <text x="322" y="154" font-weight="700">主食：四分之一（约一个拳头）</text>
+        <text x="322" y="174" fill="#52514e">米饭、燕麦、红薯、土豆；练得多的日子可以多一点</text>
+        <circle cx="307" cy="209" r="7" fill="#b5b3ab"/>
+        <text x="322" y="214" font-weight="700">好油：一个大拇指</text>
+        <text x="322" y="234" fill="#52514e">橄榄油、坚果、牛油果；水果每天 2 份，饭后或点心吃</text>
+      </g>
+    </svg>
+    <figcaption><b>图 10　每餐的餐盘比例。</b>不想算数字的人，每餐照这样吃就八九不离十。</figcaption>
+  </figure>
+
+  <h2>蛋白质</h2>
+  <ul>
+    <li><b>每公斤体重每天 1.6–2.2 克</b>，多数人吃到 1.6 就够，分 3–4 餐吃。</li>
+    <li><b>体重过重的人，用“目标体重”来算</b>，不要用现在的体重。例：目标 70 公斤 → 每天约 110–150 克，每餐 30–40 克。</li>
+    <li>来源：鸡蛋、鸡胸、瘦牛肉、鱼、豆腐、无糖酸奶、牛奶。吃不够再用乳清蛋白补。</li>
+  </ul>
+
+  <h2>热量：先看自己在哪个起点</h2>
+  <table>
+    <tr><th style="width:30%">你的起点</th><th style="width:30%">怎么吃</th><th>说明</th></tr>
+    <tr><td>偏瘦、想长肌肉</td><td>每天多吃约 5–10%</td><td>体重每月增加约 0.5–1 公斤；增加太快多半是脂肪</td></tr>
+    <tr><td>体重正常、肌肉不多的新手</td><td>维持热量</td><td>先专心练，体态会自己变好，不必急着减重</td></tr>
+    <tr><td>体脂偏高</td><td>每天少吃 10–20%</td><td>每周体重下降 0.5–1%</td></tr>
+    <tr><td>肥胖或有慢性病</td><td>和医生或营养师一起制定</td><td>不要自己大幅节食</td></tr>
+  </table>
+  <ul>
+    <li><b>越接近目标，减得越慢：</b>已经偏瘦、想保住肌肉，每周掉 0.5% 左右就好。例：70 公斤的人每周约 0.35 公斤。</li>
+    <li><b>长期减脂</b>可以每 8–12 周回到维持热量 1–2 周，让身体和心情喘口气。</li>
+    <li>脂肪至少占总热量 20%；纤维每天 25–35 克；蔬菜 3 份、水果 2 份。</li>
+  </ul>
+
+  <h2>一天怎么吃（目标体重 70 公斤的例子）</h2>
+  <table>
+    <tr><th style="width:16%">餐次</th><th style="width:60%">内容</th><th class="n">蛋白质</th></tr>
+    <tr><td>早餐</td><td>鸡蛋 2 颗、无糖酸奶 1 盒、燕麦 1 小碗</td><td class="n">约 30 g</td></tr>
+    <tr><td>午餐</td><td>盒饭：一掌鸡腿或鱼、半盘青菜、一拳米饭</td><td class="n">约 35 g</td></tr>
+    <tr><td>点心</td><td>牛奶或无糖豆浆 1 杯、水果 1 份</td><td class="n">约 10 g</td></tr>
+    <tr><td>晚餐</td><td>一掌瘦肉或豆腐、半盘青菜、一拳红薯</td><td class="n">约 35 g</td></tr>
+    <tr><td>需要时</td><td>练后或睡前补一份乳清蛋白</td><td class="n">约 25 g</td></tr>
+    <tr><td><b>合计</b></td><td>正好落在每天 110–150 g 的范围</td><td class="n"><b>约 135 g</b></td></tr>
+  </table>
+
+  <h2>弹性规则</h2>
+  <ul>
+    <li><b>八成天然食物，两成喜欢的食物。</b>不需要完全戒糖，添加糖控制在每天总热量 10% 以内。</li>
+    <li><b>聚餐、节日事先算进整周</b>，吃完隔天照常吃，不用饿肚子补偿。</li>
+    <li><b>酒少喝：</b>热量高，又会影响睡眠和恢复。</li>
+  </ul>
+
+  <h2>补充品</h2>
+  <table>
+    <tr><th style="width:22%">名称</th><th style="width:30%">用法</th><th>说明</th></tr>
+    <tr><td>肌酸</td><td>每天 3–5 克</td><td>证据最充分的补充品，任何时间吃都可以</td></tr>
+    <tr><td>乳清蛋白</td><td>蛋白质不够时补</td><td>本质就是食物，方便而已</td></tr>
+    <tr><td>咖啡因</td><td>睡前 8 小时以前</td><td>能提升训练表现，但太晚喝会影响睡眠</td></tr>
+    <tr><td>维生素 D</td><td>先抽血检查</td><td>日照少的人比较容易不足</td></tr>
+  </table>
+</section>
+
+<!-- ============ 第 9 章 ============ -->
+<section class="chapter">
+  <div class="chap-no">第 9 章</div>
+  <h1>睡眠与恢复</h1>
+  <p class="lead">训练只是刺激，进步发生在休息的时候。恢复跟不上，练越多反而越退步。</p>
+
+  <h2>睡眠：每晚 7–9 小时</h2>
+  <p>睡不够时，力量、长肌肉的效率、食欲控制会一起变差，减脂时掉的肌肉也更多。</p>
+  <div class="grid2">
+    <div class="card">
+      <div class="h">作息</div>
+      <ul><li>起床时间每天相差不超过 1 小时，周末也一样</li><li>睡前 30–60 分钟放下手机，至少调暗</li><li>高强度训练最好在睡前 1–2 小时结束</li></ul>
+    </div>
+    <div class="card">
+      <div class="h">环境与饮品</div>
+      <ul><li>房间暗、安静、偏凉（约 18–22°C）</li><li>咖啡因在睡前 8 小时停</li><li>酒会打乱深层睡眠，训练期少喝</li></ul>
+    </div>
+  </div>
+
+  <h2>恢复管理</h2>
+  <ul>
+    <li><b>连续几天睡不到 6 小时：</b>当周降低强度，不要硬撑。</li>
+    <li><b>工作或生活压力大：</b>训练量减少 20–30%，维持住就好。压力会叠加，身体分不出是哪一种。</li>
+    <li><b>减脂期：</b>热量少吃超过 25% 时，恢复和力量通常会明显下滑。</li>
+    <li><b>减量周：</b>约每 6–8 周一次，或觉得累积疲劳时提前（见第 3 章）。</li>
+  </ul>
+
+  <div class="box warn">
+    <div class="t">疲劳提醒（不是诊断）</div>
+    <p>下面出现两项以上，先休息 2–3 天，接着轻松练一周：</p>
+    <ul>
+      <li>早上起床的心率比平常明显偏高</li>
+      <li>力量连续两周下滑</li>
+      <li>睡不好、没动力、容易生病</li>
+    </ul>
+    <p>休息后还没改善，或同时出现第 1 章“比体脂数字更重要的信号”，就去看医生。</p>
+  </div>
+</section>
+
+<!-- ============ 第 10 章 ============ -->
+<section class="chapter">
+  <div class="chap-no">第 10 章</div>
+  <h1>追踪进度</h1>
+  <p class="lead">外形看趋势，能力看测验。不要只盯着体脂一个数字。</p>
+
+  <figure>
+    <svg id="wt" viewBox="0 0 680 270" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="每日体重与七日平均示意"></svg>
+    <figcaption><b>图 11　每天的体重会跳来跳去（示意）。</b>单天可能差 1 公斤，多半是水分和食物；看“7 天平均”那条线往哪里走就好。</figcaption>
+  </figure>
+
+  <table>
+    <tr><th style="width:14%">项目</th><th style="width:34%">怎么量</th><th style="width:16%">多久一次</th><th>看什么</th></tr>
+    <tr><td>体重</td><td>早上起床、上完厕所</td><td>每天</td><td>看每周平均的变化</td></tr>
+    <tr><td>腰围</td><td>肚脐高度，自然呼气后量</td><td>每 2 周</td><td>减脂期应该慢慢变小</td></tr>
+    <tr><td>照片</td><td>同光线、同角度，正面、侧面、背面</td><td>每 4 周</td><td>眼睛看得到的变化</td></tr>
+    <tr><td>力量</td><td>记录每次主项的重量和次数</td><td>每次训练</td><td>增肌期稳定进步；减脂期维持就好</td></tr>
+    <tr><td>心肺</td><td>同一条路线的心率和速度</td><td>每 6–8 周</td><td>同样心率下跑得更快</td></tr>
+    <tr><td>能力</td><td>第 6 章的自我检查</td><td>每 6–8 周</td><td>维持或进步</td></tr>
+    <tr><td>恢复</td><td>早晨心率、睡眠时数</td><td>每天</td><td>有没有明显异常</td></tr>
+  </table>
+
+  <div class="box tip">
+    <div class="t">什么时候调整计划</div>
+    <p>数字停滞 <b>2–3 周</b>再调整，不要因为一两天的波动就改方向。调整时一次只改一件事（例如每天少吃 150–200 大卡），再观察 2–3 周。</p>
+  </div>
+</section>
+
+<!-- ============ 第 11 章 ============ -->
+<section class="chapter">
+  <div class="chap-no">第 11 章</div>
+  <h1>长期维持与心态</h1>
+  <p class="lead">达到目标之后的日子，才是这套方法真正的主体。维持比追求容易得多，前提是生活方式本身撑得住。</p>
+
+  <h2>维持期怎么练</h2>
+  <figure>
+    <svg viewBox="0 0 680 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="维持期减组数不减重量">
+      <g font-size="13" fill="#1d1d1b">
+        <text x="0" y="40" font-weight="700">增肌期</text>
+        <text x="0" y="106" font-weight="700">维持期</text>
+      </g>
+      <!-- each set block 30 wide gap 4 -->
+      <g fill="#2a78d6" id="blk1"></g>
+      <g fill="#2a78d6" id="blk2"></g>
+      <g font-size="12" fill="#52514e">
+        <text x="440" y="40">每个肌群每周 10 组 · 卧推 60 公斤</text>
+        <text x="440" y="106">每周 4–5 组 · 卧推<tspan font-weight="700" fill="#1d1d1b"> 还是 60 公斤</tspan></text>
+      </g>
+      <text x="0" y="158" font-size="12.5" fill="#1d1d1b">组数可以减到一半甚至三分之一，<tspan font-weight="700">但重量不要降</tspan>，肌肉和力量大多保得住。</text>
+    </svg>
+    <figcaption><b>图 12　减组数，不减重量。</b>维持期每周 2–3 次重量训练就够，有氧照常。</figcaption>
+  </figure>
+
+  <h2>维持期怎么吃</h2>
+  <ul>
+    <li>达标后，热量回到“新体重的维持量”。一次回到位或分几周慢慢加都可以，看 2–4 周的体重趋势再微调。</li>
+    <li>体脂上下 2–3% 是正常的。出差、聚餐、忙碌之后回到原本的节奏就好，不需要补偿。</li>
+  </ul>
+
+  <h2>保留好的部分</h2>
+  <p>“付出就有回报”的感觉、习惯一点点不舒服，这些是训练带来的好东西，值得留着。但不需要用分数或等级来评价自己的身体，那很容易变成焦虑。</p>
+
+  <div class="box warn">
+    <div class="t">心理警示</div>
+    <p>出现以下情况，代表追求体态已经开始伤害生活，应该放宽标准，必要时找专业人士聊聊：</p>
+    <ul>
+      <li>吃了计划外的东西就强烈自责，或用大量运动补偿。</li>
+      <li>因为怕破坏饮食而拒绝聚餐。</li>
+      <li>每天反复照镜子、量体重，数字一变就影响整天心情。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ 速查卡 ============ -->
+<section class="chapter">
+  <div class="chap-no">附录</div>
+  <h1>一页速查卡</h1>
+  <p class="lead">把这页存在手机里，忘了就看一眼。</p>
+  <div class="quick">
+    <div class="card"><div class="h">目标</div><ul><li>男性体脂约 10–15%，女性约 20–25%</li><li>腰围小于身高的一半</li><li>看趋势，不看单一数字</li></ul></div>
+    <div class="card"><div class="h">重量训练</div><ul><li>每周 3 次（下肢／上肢／全身）</li><li>每个肌群每周 2 次、约 10 组</li><li>每组留 1–3 下；主项 6–10 下，辅助 8–15 下</li><li>先加次数，再加重量</li></ul></div>
+    <div class="card"><div class="h">有氧</div><ul><li>每周 150 分钟中等强度（高强度 1 分钟算 2 分钟）</li><li>中等：能说话、唱不了歌</li><li>每周 1 次间歇，每天 7,000–10,000 步</li></ul></div>
+    <div class="card"><div class="h">小剂量三项</div><ul><li>爆发力：每周 2 次、5–10 分钟，全力、不喘</li><li>活动度：练前动态热身，练后拉伸</li><li>平衡：每周 2 个单腿动作，每次 1 个核心</li></ul></div>
+    <div class="card"><div class="h">饮食</div><ul><li>蛋白质 1.6–2.2 g／公斤（过重用目标体重算）</li><li>半盘蔬菜、一掌蛋白质、一拳主食</li><li>减脂每周 0.5–1%，越接近目标越慢</li><li>八成天然、两成弹性；肌酸每天 3–5 g</li></ul></div>
+    <div class="card"><div class="h">睡眠与恢复</div><ul><li>每晚 7–9 小时，起床时间固定</li><li>每 6–8 周一次减量周</li><li>压力大就少练 20–30%</li></ul></div>
+    <div class="card"><div class="h">瓶颈</div><ul><li>先查睡眠和饮食</li><li>再查动作和休息时间</li><li>最后才换次数范围或动作</li><li>停滞 2–3 周再调整</li></ul></div>
+    <div class="card"><div class="h">安全</div><ul><li>肌肉酸：照练</li><li>关节小不适：减重或换动作</li><li>尖锐痛、越练越痛：停，看医生</li><li>忙碌周：做最低版本也算数</li></ul></div>
+  </div>
+  <div class="refs">
+    <div class="t">参考视频（薄肌理论原版）</div>
+    <ul>
+      <li>邵艾伦 Alan《如何练出薄肌？训练、饮食、减脂一次讲透》，7:39 起：<a href="https://www.youtube.com/watch?v=vQp8G-BHnI8&amp;t=459s">youtube.com/watch?v=vQp8G-BHnI8&amp;t=459s</a></li>
+      <li>邵艾伦 Alan《对话孙宇晨：年轻人如何抓住 AI 时代的机会？》，3:12:05 起：<a href="https://www.youtube.com/watch?v=0Z-vhBvBmUY&amp;t=11525s">youtube.com/watch?v=0Z-vhBvBmUY&amp;t=11525s</a></li>
+    </ul>
+  </div>
+  <div class="end">V1.1 · 2026 年 10 月　｜　本手册为一般健身指南，不取代医疗建议。<br>CC BY 4.0 · 转载请标明出处：github.com/enlivatech/sustainable-lean-physique</div>
+  <div class="brand">© 2026 Enliva LLC</div>
+</section>
+
+<script>
+// 图 4：双重渐进法
+(function(){
+  const svg=document.getElementById('dp'), NS='http://www.w3.org/2000/svg';
+  const data=[[60,[8,8,8]],[60,[9,9,8]],[60,[10,9,9]],[60,[10,10,10]],[62.5,[8,8,8]],[62.5,[9,9,8]],[62.5,[10,10,9]]];
+  const x0=60, w=70, gap=16, base=200, k=5;
+  const el=(t,a,txt)=>{const e=document.createElementNS(NS,t);for(const n in a)e.setAttribute(n,a[n]);if(txt!=null)e.textContent=txt;svg.appendChild(e);return e;};
+  // y grid
+  [0,10,20,30].forEach(v=>{const y=base-v*k; el('line',{x1:x0-6,x2:670,y1:y,y2:y,stroke:'#ecebe6'}); el('text',{x:x0-10,y:y+4,'font-size':10.5,fill:'#8a8984','text-anchor':'end'},v);});
+  el('text',{x:0,y:14,'font-size':11,fill:'#52514e'},'三组总次数');
+  data.forEach((d,i)=>{
+    const tot=d[1].reduce((a,b)=>a+b,0), h=tot*k, x=x0+i*(w+gap), y=base-h;
+    const hit=d[1].every(r=>r===10);
+    const fill= d[0]===60 ? (hit?'#2a78d6':'#8fbbee') : '#eb6834';
+    el('path',{d:`M${x} ${base} V${y+4} a4 4 0 0 1 4 -4 H${x+w-4} a4 4 0 0 1 4 4 V${base} Z`,fill});
+    el('text',{x:x+w/2,y:y-8,'font-size':12,'text-anchor':'middle',fill:'#1d1d1b','font-weight':hit?700:400},d[1].join('·'));
+    el('text',{x:x+w/2,y:base+18,'font-size':11,'text-anchor':'middle',fill:'#52514e'},'第 '+(i+1)+' 次');
+  });
+  el('line',{x1:x0-6,x2:670,y1:base,y2:base,stroke:'#1d1d1b'});
+  // weight bands
+  const bx=(i)=>x0+i*(w+gap);
+  el('rect',{x:bx(0),y:base+28,width:bx(3)+w-bx(0),height:20,rx:3,fill:'#e3eefb'});
+  el('text',{x:(bx(0)+bx(3)+w)/2,y:base+42,'font-size':11.5,'text-anchor':'middle',fill:'#1d1d1b'},'60 公斤');
+  el('rect',{x:bx(4),y:base+28,width:bx(6)+w-bx(4),height:20,rx:3,fill:'#fdebe3'});
+  el('text',{x:(bx(4)+bx(6)+w)/2,y:base+42,'font-size':11.5,'text-anchor':'middle',fill:'#1d1d1b'},'加到 62.5 公斤，次数回到 8 下');
+  el('text',{x:bx(3)+w/2,y:22,'font-size':11.5,'text-anchor':'middle',fill:'#2a78d6','font-weight':700},'全部 10 下 → 加重');
+})();
+
+// 图 11：体重趋势
+(function(){
+  const svg=document.getElementById('wt'), NS='http://www.w3.org/2000/svg';
+  const el=(t,a,txt)=>{const e=document.createElementNS(NS,t);for(const n in a)e.setAttribute(n,a[n]);if(txt!=null)e.textContent=txt;svg.appendChild(e);return e;};
+  let s=7; const rnd=()=>{s=(s*9301+49297)%233280;return s/233280;};
+  const N=42, d=[];
+  for(let i=0;i<N;i++){ const trend=72-1.4*(i/(N-1)); const wk=(i%7===0||i%7===6)?0.35:0; d.push(+(trend+(rnd()-0.5)*1.1+wk).toFixed(2)); }
+  const avg=d.map((_,i)=>{const a=d.slice(Math.max(0,i-6),i+1);return a.reduce((p,c)=>p+c,0)/a.length;});
+  const X=i=>60+i*(600/(N-1)), lo=69.8, hi=73.2, Y=v=>20+(hi-v)/(hi-lo)*200;
+  [70,71,72,73].forEach(v=>{el('line',{x1:60,x2:660,y1:Y(v),y2:Y(v),stroke:'#ecebe6'});el('text',{x:52,y:Y(v)+4,'font-size':10.5,fill:'#8a8984','text-anchor':'end'},v);});
+  el('text',{x:0,y:12,'font-size':11,fill:'#52514e'},'体重（公斤）');
+  d.forEach((v,i)=>el('circle',{cx:X(i),cy:Y(v),r:3.2,fill:'#b5b3ab'}));
+  el('path',{d:avg.slice(6).map((v,j)=>(j?'L':'M')+X(j+6).toFixed(1)+' '+Y(v).toFixed(1)).join(' '),fill:'none',stroke:'#2a78d6','stroke-width':2.5,'stroke-linejoin':'round'});
+  [0,7,14,21,28,35].forEach((i,w)=>el('text',{x:X(i+3),y:250,'font-size':11,fill:'#8a8984','text-anchor':'middle'},'第 '+(w+1)+' 周'));
+  el('circle',{cx:430,cy:14,r:3.2,fill:'#b5b3ab'}); el('text',{x:440,y:18,'font-size':11.5,fill:'#1d1d1b'},'每天的体重');
+  el('line',{x1:530,x2:552,y1:14,y2:14,stroke:'#2a78d6','stroke-width':2.5}); el('text',{x:558,y:18,'font-size':11.5,fill:'#1d1d1b'},'7 天平均');
+})();
+
+// 图 12：组数方块
+(function(){
+  const NS='http://www.w3.org/2000/svg';
+  const draw=(id,n,y,fade)=>{const g=document.getElementById(id);
+    for(let i=0;i<10;i++){const r=document.createElementNS(NS,'rect');
+      r.setAttribute('x',70+i*36);r.setAttribute('y',y);r.setAttribute('width',32);r.setAttribute('height',28);r.setAttribute('rx',4);
+      if(i>=n){r.setAttribute('fill','#fff');r.setAttribute('stroke','#c9c7bf');r.setAttribute('stroke-dasharray','3 3');}
+      g.appendChild(r);} };
+  draw('blk1',10,20); draw('blk2',5,86);
+})();
+</script>
+</body>
+</html>

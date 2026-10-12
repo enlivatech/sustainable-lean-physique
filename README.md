@@ -1,22 +1,35 @@
 # 可持續薄肌手冊：薄肌理論可持續版
 
-好看、好用、練得久的身體——一本照著做就行的訓練與生活指南（繁體中文）。
+**繁體中文** · [简体中文](README.zh-Hans.md) · [English](README.en.md)
 
-**[下載 PDF：可持續薄肌手冊](可持續薄肌手冊.pdf)**（A4，18 頁，12 張圖）
+好看、好用、練得久的身體——一本照著做就行的訓練與生活指南。目前版本 **V1.1**。
 
-![原版 vs 可持續版](原版vs可持續版.png)
+## 下載
+
+| 語言 | 手冊（A4 PDF） | 對比圖（社群分享用） |
+| --- | --- | --- |
+| 繁體中文 | [可持續薄肌手冊.pdf](zh-Hant/可持續薄肌手冊.pdf) | [原版vs可持續版.png](zh-Hant/原版vs可持續版.png) |
+| 简体中文 | [可持续薄肌手册.pdf](zh-Hans/可持续薄肌手册.pdf) | [原版vs可持续版.png](zh-Hans/原版vs可持续版.png) |
+| English | [Sustainable-Lean-Physique-Handbook.pdf](en/Sustainable-Lean-Physique-Handbook.pdf) | [Original-vs-Sustainable.png](en/Original-vs-Sustainable.png) |
+
+![原版 vs 可持續版](zh-Hant/原版vs可持續版.png)
 
 ## 這是什麼
 
 「薄肌」指的是足夠的肌肉加上適中的體脂：穿衣顯瘦、脫衣有肉，不追求大塊頭。
 
-這份手冊從「薄肌理論」的原版，也就是邵艾倫 Alan 的影片〈[如何練出薄肌？訓練、飲食、減脂一次講透](https://www.youtube.com/watch?v=vQp8G-BHnI8)〉出發。原版抓重點的眼光很準（增肌加減脂、漸進超負荷、抓大放小），但目標偏向短期衝刺。這裡依照運動指南和研究改寫成能長期維持的版本：
+這份手冊從「薄肌理論」的原版出發，也就是邵艾倫 Alan 在影片中提出的說法。原版抓重點的眼光很準（增肌加減脂、漸進超負荷、抓大放小），但目標偏向短期衝刺。這裡依照運動指南和研究改寫成能長期維持的版本：
 
 - 體脂不追極低：男性常態 10–15%，10% 只在短期需要時壓一下。
 - 每個肌群每週練 2 次、約 10 組，主項 6–10 下，每組留 1–3 下。
 - 補上有氧（每週約 150 分鐘中等強度）、睡眠與恢復、爆發力、平衡、活動度。
 - 飲食八成原型、兩成彈性，蛋白質 1.6–2.2 g/kg（過重用目標體重算）。
 - 加入新手課表、疼痛紅綠燈、達標後的維持方法和心理警訊。
+
+## 原版影片
+
+- 邵艾倫 Alan〈如何練出薄肌？訓練、飲食、減脂一次講透〉，7:39 起：https://www.youtube.com/watch?v=vQp8G-BHnI8&t=459s
+- 邵艾倫 Alan〈對話孫宇晨：年輕人如何抓住 AI 時代的機會？〉，3:12:05 起：https://www.youtube.com/watch?v=0Z-vhBvBmUY&t=11525s
 
 ## 目錄
 
@@ -34,23 +47,24 @@
 | 9 | 睡眠與恢復 |
 | 10 | 追蹤進度 |
 | 11 | 長期維持與心態 |
-| 附錄 | 一頁速查卡 |
+| 附錄 | 一頁速查卡、原版影片 |
 
-## 檔案
+## 檔案結構
 
-| 檔案 | 說明 |
+| 路徑 | 說明 |
 | --- | --- |
-| `可持續薄肌手冊.pdf` | 手冊成品 |
-| `原版vs可持續版.png` | 對比圖（2160×2700，適合社群分享） |
-| `src/handbook.html` | 手冊原始檔，圖表都是內嵌 SVG |
-| `src/comparison.html` | 對比圖原始檔 |
-| `build.sh` | 用 Chrome 重新產生 PDF 和對比圖 |
+| `zh-Hant/`、`zh-Hans/`、`en/` | 三種語言的手冊 PDF 和對比圖 |
+| `src/<語言>/handbook.html` | 手冊原始檔，圖表都是內嵌 SVG |
+| `src/<語言>/comparison.html` | 對比圖原始檔 |
+| `tools/zh_hans.py` | 從繁體原始檔產生简体版（OpenCC 加大陸用語對照表） |
+| `build.sh` | 用 Chrome 重新產生三種語言的 PDF 和對比圖 |
 
-改內容時改 `src/` 裡的 HTML，再執行 `./build.sh`。字型用 Windows 內建的微軟正黑體；其他系統會改用 Noto Sans TC。
+改內容的流程：改 `src/zh-Hant/` 和 `src/en/` → 執行 `python tools/zh_hans.py` → 執行 `./build.sh`。
 
-## English
+## 版本記錄
 
-*Bó jī* (薄肌, literally "thin muscle"; the idea is often called 薄肌理論, "bó jī theory") is the Chinese-internet term for a lean, athletic look: moderate muscle at a low-but-livable body fat, close to what English speakers call a *lean physique* or *swimmer's build*. This repo is a Traditional Chinese handbook that turns a popular short-term version of the idea into a sustainable plan: twice-weekly training per muscle, real cardio, sleep and recovery, flexible eating, and a maintenance phase.
+- **V1.1**（2026-10-12）：新增简体中文、英文版；加上原版影片連結；落款改為 Enliva LLC；CC BY 4.0 授權。
+- **V1.0**（2026-10-12）：繁體中文版首次發布。
 
 ## 授權
 
@@ -58,10 +72,10 @@
 
 標明出處的寫法，例如：
 
-> 《可持續薄肌手冊》，AZ，CC BY 4.0，https://github.com/enlivatech/sustainable-lean-physique
+> 《可持續薄肌手冊》V1.1，Enliva LLC，CC BY 4.0，https://github.com/enlivatech/sustainable-lean-physique
 
 ## 聲明
 
 本手冊是給一般成年人的健身指南，不取代醫療建議。有疾病、舊傷、懷孕或正在服藥，開始前先問醫生。
 
-整理：AZ · 2026 年 10 月
+© 2026 Enliva LLC
